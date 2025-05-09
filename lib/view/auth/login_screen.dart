@@ -1,13 +1,17 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/widgets/custom_text_field.dart';
 
 class LoginScreen extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  AuthViewModel authViewModel = AuthViewModel();
+  Future<UserCredential>? credintial;
   LoginScreen({super.key});
 
   @override
@@ -17,7 +21,7 @@ class LoginScreen extends StatelessWidget {
       body: Form(
         key: formKey,
         child: ListView(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           children: [
             // Lottie animation
             Lottie.asset(
@@ -63,55 +67,65 @@ class LoginScreen extends StatelessWidget {
             // Login button
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor:Colors.deepOrange
+                backgroundColor: Colors.deepOrange,
               ),
-              onPressed: () {
-                if (formKey.currentState!.validate()) {}
+              onPressed: (){
+                if (formKey.currentState!.validate()) {
+                  credintial = authViewModel.login(
+                    emailController.text.trim(),
+                    passwordController.text.trim(),
+                  );
+        
+                  credintial!.then((value) {
+                    if (value.user == null) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Login failed',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          backgroundColor: Colors.red,
+                        ),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'Login successful',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          backgroundColor: Colors.green,
+                        ),
+                      );
+                      Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        '/home',
+                        (route) => false,
+                      );
+                    }
+                  });
+                }
               },
-              child: const Text('Login',
-                  style: TextStyle(
-                    color: Colors.white,
-                  )),
+              child: const Text('Login', style: TextStyle(color: Colors.white)),
             ),
             const SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Don\'t have an account?'),
+                const Text(
+                  'Forgot Password?',
+                  style: TextStyle(color: Colors.black),
+                ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/signup');
+                  Navigator.pushNamed(context, '/forgot-password');
                   },
-                  child: const Text('Sign Up',
-                      style: TextStyle(
-                        color: Colors.deepOrange,
-                      )),
+                  child: const Text(
+                    'Change Password',
+                    style: TextStyle(color: Colors.deepOrange),
+                  ),
                 ),
               ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              children: [
-                const Expanded(child: Divider()),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Text('or'),
-                ),
-                const Expanded(child: Divider()),
-              ],
-            ),
-      
-            const SizedBox(height: 20),
-            // Google outline button
-            OutlinedButton.icon(
-              onPressed: () {
-                // Handle Google signup
-              },
-              icon: Image.asset('images/google.png', height: 20),
-              label: const Text('Signup with Google',
-                  style: TextStyle(
-                    color: Colors.black,
-                  )),
             ),
           ],
         ),

@@ -1,22 +1,38 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthViewModel {
-  var auth =FirebaseAuth.instance;
+  var auth = FirebaseAuth.instance;
   // Add your authentication logic here
-  void login(String email, String password) async{
+  Future<UserCredential> login(String email, String password) async {
     // Implement login logic
-   await auth.signInWithEmailAndPassword(email: email, password: password);
+    var userCredential = await auth.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+
+    return userCredential;
   }
-  void signup(String email, String password) async{
-    // Implement signup logic
-   await auth.createUserWithEmailAndPassword(email: email, password: password);
-  }
-  void logout() async{
+
+  Future<void> logout() async {
     // Implement logout logic
-   await auth.signOut();
+    await auth.signOut();
   }
-  void resetPassword(String email) async{
+
+  Future<void> resetPassword(String email) async {
     // Implement password reset logic
+    await auth.sendPasswordResetEmail(email: email);
+  }
+
+  Future<void> changePassword(String newPassword) async {
+    // Implement change password logic
+    var user = auth.currentUser;
+    if (user != null) {
+      await user.updatePassword(newPassword);
+    }
+  }
+
+  Future<void> forgotPassword(String email) async {
+    // Implement forgot password logic
     await auth.sendPasswordResetEmail(email: email);
   }
 }

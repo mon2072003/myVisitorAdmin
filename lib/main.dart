@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:my_visitor_admin/view/auth/change_password_screen.dart';
+import 'package:my_visitor_admin/view/auth/forgot_password_screen.dart';
 import 'package:my_visitor_admin/view/auth/login_screen.dart';
-import 'package:my_visitor_admin/view/auth/signup_screen.dart';
 import 'package:my_visitor_admin/view/home/home_screen.dart';
 import 'firebase_options.dart';
 
@@ -31,9 +32,10 @@ class MyVisitorAdmin extends StatelessWidget {
       initialRoute:
           FirebaseAuth.instance.currentUser != null ? '/home' : '/login',
       routes: {
-        '/home': (context) => const HomeScreen(),
+        '/home': (context) =>  HomeScreen(),
         '/login': (context) =>  LoginScreen(),
-        '/signup': (context) =>  SignupScreen(),
+        '/change-password': (context) => ChangePasswordScreen(),
+        '/forgot-password': (context) => ForgotPasswordScreen(),
       },
     );
   }
