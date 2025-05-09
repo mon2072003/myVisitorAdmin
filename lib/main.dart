@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:my_visitor_admin/chat/presentation/views/chat_view.dart';
+import 'package:my_visitor_admin/chat/presentation/views/contacts_view.dart';
 import 'package:my_visitor_admin/view/auth/login_screen.dart';
 import 'package:my_visitor_admin/view/auth/signup_screen.dart';
 import 'package:my_visitor_admin/view/home/home_screen.dart';
@@ -34,7 +36,18 @@ class MyVisitorAdmin extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         '/login': (context) =>  LoginScreen(),
         '/signup': (context) =>  SignupScreen(),
+        '/ContactsScreen':(context)=>ContactsScreen(),
       },
+       onGenerateRoute: (settings) {
+    if (settings.name == ChatView.id) {
+      final contactEmail = settings.arguments as String;
+      return MaterialPageRoute(
+        builder: (context) => ChatView(contactEmail: contactEmail),
+      );
+    }
+
+    
+  },
     );
   }
 }
