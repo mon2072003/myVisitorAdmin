@@ -21,7 +21,7 @@ class MyVisitorAdmin extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My Visitor Admin',
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       darkTheme: ThemeData.dark(),
       theme: ThemeData(
         primarySwatch: Colors.blue,

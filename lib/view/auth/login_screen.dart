@@ -114,7 +114,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 const Text(
                   'Forgot Password?',
-                  style: TextStyle(color: Colors.black),
+                  // style: TextStyle(color: Colors.black),
                 ),
                 TextButton(
                   onPressed: () {
