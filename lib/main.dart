@@ -5,10 +5,14 @@ import 'package:my_visitor_admin/chat/presentation/views/chat_view.dart';
 import 'package:my_visitor_admin/chat/presentation/views/contacts_view.dart';
 import 'package:my_visitor_admin/view/auth/login_screen.dart';
 import 'package:my_visitor_admin/view/home/home_screen.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'firebase_options.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await Future.delayed(const Duration(seconds: 3));
+  FlutterNativeSplash.remove();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyVisitorAdmin());
 }
@@ -21,7 +25,7 @@ class MyVisitorAdmin extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My Visitor Admin',
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
       darkTheme: ThemeData.dark(),
       theme: ThemeData(
         primarySwatch: Colors.blue,

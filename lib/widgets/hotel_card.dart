@@ -2,30 +2,111 @@ import 'package:flutter/material.dart';
 import 'package:my_visitor_admin/model/contacts/hotel_reservation_model/hotel_reservation_model.dart';
 
 class HotelCard extends StatelessWidget {
-  HotelReservationModel hotel;
-  HotelCard({super.key, required this.hotel});
+  final HotelReservationModel hotel;
+  const HotelCard({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.grey,
-      child: ListTile(
-        title: Text(hotel.hotel.name, style: TextStyle(color: Colors.black)),
-        subtitle: Column(
+      elevation: 4,
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              hotel.bookDetails.checkIn,
-              style: TextStyle(color: Colors.black),
+              hotel.hotel.name,
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
             ),
-            Text(
-              hotel.bookDetails.checkOut,
-              style: TextStyle(color: Colors.black),
+            const SizedBox(height: 8),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.calendar_today, color: Colors.blue, size: 16),
+                        const SizedBox(width: 4),
+                        Text(
+                          "Check-in:",
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                color: Colors.grey[600],
+                                fontSize: 15,
+                              ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      hotel.bookDetails.checkIn,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: Colors.white,
+                          ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.calendar_today_outlined, color: Colors.red, size: 16),
+                        const SizedBox(width: 4),
+                        Text(
+                          "Check-out:",
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                color: Colors.grey[600],
+                                fontSize: 15,
+                              ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      hotel.bookDetails.checkOut,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: Colors.white,
+                          ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.attach_money, color: Colors.green, size: 16),
+                    const SizedBox(width: 4),
+                    Text(
+                      "Total Payment:",
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.w600,
+                            color: Colors.grey[600],
+                          ),
+                    ),
+                  ],
+                ),
+                Text(
+                  "${hotel.payment.amountCents / 100} ${hotel.payment.currency}",
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green[700],
+                      ),
+                ),
+              ],
             ),
           ],
-        ),
-        trailing: Text(
-          "${hotel.payment.amountCents.toString()} ${hotel.payment.currency}",
-          style: TextStyle(color: Colors.black),
         ),
       ),
     );
