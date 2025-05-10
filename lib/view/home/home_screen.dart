@@ -23,9 +23,15 @@ class HomeScreen extends StatelessWidget {
           child: ListView(
             children: [
               UserAccountsDrawerHeader(
-                accountName: Text(
-                  authViewModel.auth.currentUser!.displayName ?? "",
-                  style: TextStyle(color: Colors.black),
+                accountName: Row(
+                  children: [
+                    Text(
+                      authViewModel.auth.currentUser!.displayName ?? "",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    const SizedBox(width: 10,),
+                    Icon(Icons.verified,color: Colors.deepOrange,)
+                  ],
                 ),
                 accountEmail: Text(
                   authViewModel.auth.currentUser!.email ?? "",
@@ -70,6 +76,11 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: Image.asset('images/home_logo.png'),
           centerTitle: true,
+          actions: [
+           IconButton(onPressed: (){
+            Navigator.of(context).pushNamed("/ContactsSupportScreen");
+           }, icon: Icon(Icons.contact_support,color: Colors.deepOrange,size: 40,))
+          ],
         ),
         bottomNavigationBar: BlocBuilder<NavigatorCubit, NavigatorStates>(
           builder: (context, state) {

@@ -32,20 +32,19 @@ class MyVisitorAdmin extends StatelessWidget {
       initialRoute:
           FirebaseAuth.instance.currentUser != null ? '/home' : '/login',
       routes: {
-        '/home': (context) =>  HomeScreen(),
-        '/login': (context) =>  LoginScreen(),
-        '/ContactsScreen':(context)=>ContactsScreen(),
+        '/home': (context) => HomeScreen(),
+        '/login': (context) => LoginScreen(),
+        '/ContactsSupportScreen': (context) => ContactsSupportScreen(),
       },
-       onGenerateRoute: (settings) {
-    if (settings.name == ChatView.id) {
-      final contactEmail = settings.arguments as String;
-      return MaterialPageRoute(
-        builder: (context) => ChatView(contactEmail: contactEmail),
-      );
-    }
-
-    
-  },
+      onGenerateRoute: (settings) {
+        if (settings.name == ChatView.id) {
+          final contactEmail = settings.arguments as String;
+          return MaterialPageRoute(
+            builder: (context) => ChatView(contactEmail: contactEmail),
+          );
+        }
+        return null;
+      },
     );
   }
 }

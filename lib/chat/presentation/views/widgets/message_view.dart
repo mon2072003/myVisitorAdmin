@@ -14,36 +14,38 @@ class MyMessage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(width: 8.0),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                  color: Colors.orange,
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(16),
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16),
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(16),
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16),
+                    ),
+                  ),
+                  child: Text(
+                    messageModel.message,
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-                child: Text(
-                  messageModel.message,
+                const SizedBox(height: 5.0),
+                Text(
+                  getFormattedDateTime(createdAt: messageModel.createdAt)
+                      .toString(),
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.grey,
+                    fontSize: 12.0,
                   ),
                 ),
-              ),
-              const SizedBox(height: 5.0),
-              Text(
-                getFormattedDateTime(createdAt: messageModel.createdAt)
-                    .toString(),
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 12.0,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
@@ -74,39 +76,43 @@ class FriendMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(10.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           const SizedBox(width: 8.0),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
                     color: const Color(0xffEEEEEE),
                     borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(16),
-                        topLeft: Radius.circular(16),
-                        topRight: Radius.circular(16))),
-                child: Text(
-                  messageModel.message,
-                  style: const TextStyle(
-                    color: Color.fromARGB(53, 0, 0, 0),
+                      bottomLeft: Radius.circular(16),
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16),
+                    ),
+                  ),
+                  child: Text(
+                    messageModel.message,
+                    style: const TextStyle(
+                      color: Color.fromARGB(53, 0, 0, 0),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 5.0),
-              Text(
-                getFormattedDateTime(createdAt: messageModel.createdAt)
-                    .toString(),
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 12.0,
+                const SizedBox(height: 5.0),
+                Text(
+                  getFormattedDateTime(createdAt: messageModel.createdAt)
+                      .toString(),
+                  style: const TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12.0,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

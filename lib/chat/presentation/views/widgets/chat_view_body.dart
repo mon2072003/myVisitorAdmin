@@ -25,10 +25,11 @@ class _ChatViewBodyState extends State<ChatViewBody> {
   final TextEditingController nameController = TextEditingController();
 
   TextEditingController textController = TextEditingController();
-  final Stream<QuerySnapshot> chatStream = FirebaseFirestore.instance
-      .collection('chat')
-      .orderBy('createdAt', descending: false)
-      .snapshots();
+  final Stream<QuerySnapshot> chatStream =
+      FirebaseFirestore.instance
+          .collection('chat')
+          .orderBy('createdAt', descending: false)
+          .snapshots();
   @override
   void dispose() {
     scrollController.dispose();
@@ -105,7 +106,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator  ();
+          return CircularProgressIndicator();
         }
 
         // List<MessageModel> messagesList = snapshot.data?.docs
@@ -113,7 +114,8 @@ class _ChatViewBodyState extends State<ChatViewBody> {
         //         .toList() ??
         //     [];
 
-        final messagesList = snapshot.data?.docs
+        final messagesList =
+            snapshot.data?.docs
                 .map((doc) => MessageModel.fromJson(doc))
                 .where(
                   (msg) =>
@@ -129,9 +131,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
 
         return Column(
           children: [
-            SizedBox(
-              height: 20.h,
-            ),
+            SizedBox(height: 20),
             Expanded(
               child: MessagesListView(
                 controller: scrollController,
@@ -148,9 +148,8 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                   hintText: " Write message...",
                   hintStyle: const TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
-                    borderRadius:
-                        BorderRadius.circular(20.0), 
-                    borderSide: BorderSide.none, 
+                    borderRadius: BorderRadius.circular(20.0),
+                    borderSide: BorderSide.none,
                   ),
                   filled: true,
                   fillColor: Colors.white,

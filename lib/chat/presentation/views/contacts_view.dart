@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:my_visitor_admin/chat/data/models/message_model.dart';
 import 'package:my_visitor_admin/chat/presentation/views/chat_view.dart';
 
-class ContactsScreen extends StatelessWidget {
-  const ContactsScreen({super.key});
-  static String id = 'ContactsScreen';
+class ContactsSupportScreen extends StatelessWidget {
+  const ContactsSupportScreen({super.key});
+  static String id = '/ContactsSupportScreen';
   Stream<List<MessageModel>> getUniqueUsernames() {
     return FirebaseFirestore.instance
         .collection('chat')
