@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:my_visitor_admin/chat/presentation/views/chat_view.dart';
-import 'package:my_visitor_admin/chat/presentation/views/contacts_view.dart';
+import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
+import 'package:my_visitor_admin/view/home/chats/contacts_view.dart';
+import 'package:my_visitor_admin/view/auth/forgot_password_screen.dart';
 import 'package:my_visitor_admin/view/auth/login_screen.dart';
 import 'package:my_visitor_admin/view/home/home_screen.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -37,6 +38,7 @@ class MyVisitorAdmin extends StatelessWidget {
           FirebaseAuth.instance.currentUser != null ? '/home' : '/login',
       routes: {
         '/home': (context) => HomeScreen(),
+        '/forgot-password':(context) => ForgotPasswordScreen(),
         '/login': (context) => LoginScreen(),
         '/ContactsSupportScreen': (context) => ContactsSupportScreen(),
       },

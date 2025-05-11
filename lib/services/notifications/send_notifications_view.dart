@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:http/http.dart' as http;
-import 'package:my_visitor_admin/Notifications/services/send_notifications.dart';
+import 'package:my_visitor_admin/services/notifications/send_notifications.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class SendNotifactionsSendView extends StatefulWidget {

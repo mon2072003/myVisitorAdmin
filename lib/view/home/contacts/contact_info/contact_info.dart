@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_visitor_admin/chat/presentation/views/chat_view.dart';
+import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
 import 'package:my_visitor_admin/model/contacts/contacts_model.dart';
 import 'package:my_visitor_admin/view-model/home/hotel_reservation_cubit/hotel_reservation_cubit.dart';
 import 'package:my_visitor_admin/widgets/hotel_card.dart';

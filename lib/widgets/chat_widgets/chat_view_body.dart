@@ -5,10 +5,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_visitor_admin/chat/data/models/message_model.dart';
-import 'package:my_visitor_admin/chat/presentation/manager/cubit_cubit/chat_cubit.dart';
-import 'package:my_visitor_admin/chat/presentation/views/widgets/confirm_dialog.dart';
-import 'package:my_visitor_admin/chat/presentation/views/widgets/messages_list_view.dart';
+import 'package:my_visitor_admin/model/messages/message_model.dart';
+import 'package:my_visitor_admin/view-model/home/chat_cubit/cubit_cubit/chat_cubit.dart';
+import 'package:my_visitor_admin/widgets/chat_widgets/confirm_dialog.dart';
+import 'package:my_visitor_admin/widgets/chat_widgets/messages_list_view.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class ChatViewBody extends StatefulWidget {

@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_visitor_admin/chat/presentation/manager/cubit_cubit/chat_cubit.dart';
-import 'package:my_visitor_admin/chat/presentation/views/widgets/chat_view_body.dart';
+import 'package:my_visitor_admin/view-model/home/chat_cubit/cubit_cubit/chat_cubit.dart';
+import 'package:my_visitor_admin/widgets/chat_widgets/chat_view_body.dart';
 
 class ChatView extends StatelessWidget {
   const ChatView({

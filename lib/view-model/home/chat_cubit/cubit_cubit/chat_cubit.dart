@@ -3,7 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:meta/meta.dart';
-import 'package:my_visitor_admin/chat/data/models/message_model.dart';
+import 'package:my_visitor_admin/model/messages/message_model.dart';
 import 'package:my_visitor_admin/errors/firebase_err.dart';
 
 part 'chat_state.dart';

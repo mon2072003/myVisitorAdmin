@@ -1,8 +1,8 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:my_visitor_admin/chat/data/models/message_model.dart';
-import 'package:my_visitor_admin/chat/presentation/views/widgets/message_view.dart';
+import 'package:my_visitor_admin/model/messages/message_model.dart';
+import 'package:my_visitor_admin/widgets/chat_widgets/message_view.dart';
 
 class MessagesListView extends StatelessWidget {
   const MessagesListView(
