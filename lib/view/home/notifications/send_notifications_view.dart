@@ -41,7 +41,7 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
   Future<void> getAccessToken() async {
     try {
       final serviceAccountJson =
-          await rootBundle.loadString(' assets/admin.json');
+          await rootBundle.loadString('assets/admin.json');
 
       final accountCredentials = ServiceAccountCredentials.fromJson(
         json.decode(serviceAccountJson),
@@ -85,11 +85,12 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Send Notification'),
-        elevation: 0,
-        backgroundColor: Colors.blueAccent,
       ),
-      body: Column(
+      body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 10),
         children: [
+          Image.asset("images/bell.png",height: 200,width: 200,),
+          SizedBox(height: 20,),
           CustomTextFrom(
             hint: '',
             label: "title",
@@ -98,6 +99,7 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
               titleController.text = value;
             },
           ),
+          SizedBox(height: 10,),
           CustomTextFrom(
             hint: '',
             label: "subtitle",
@@ -106,37 +108,41 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
               subTitlecontroller.text = value;
             },
           ),
-          CustomSendButton(
-            label: 'Send',
-            color: Colors.blueAccent,
-            txtcolor: Colors.white,
-            onTap: () async {
-              try {
-                await NotificationsServices().sendNotification(
-                  titleController.text,
-                  subTitlecontroller.text,
-                  accessToken,
-                );
-
-                showCustomAlert(
-                    context: context,
-                    type: AlertType.success,
-                    title: '',
-                    description: 'Send done',
-                    onPressed: () {
-                      Navigator.pop(context);
-                      setState(() {
-                        titleController.clear();
-                        subTitlecontroller.clear();
-                      });
-                    },
-                    actionTitle: 'Ok');
-
-                log('send message done');
-              } catch (e) {
-                log('send message err:$e');
-              }
-            },
+          SizedBox(height: 20,),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: CustomSendButton(
+              label: 'Send',
+              color: Colors.deepOrange,
+              txtcolor: Colors.white,
+              onTap: () async {
+                try {
+                  await NotificationsServices().sendNotification(
+                    titleController.text,
+                    subTitlecontroller.text,
+                    accessToken,
+                  );
+            
+                  showCustomAlert(
+                      context: context,
+                      type: AlertType.success,
+                      title: '',
+                      description: 'Send done',
+                      onPressed: () {
+                        Navigator.pop(context);
+                        setState(() {
+                          titleController.clear();
+                          subTitlecontroller.clear();
+                        });
+                      },
+                      actionTitle: 'Ok');
+            
+                  log('send message done');
+                } catch (e) {
+                  log('send message err:$e');
+                }
+              },
+            ),
           ),
           // IconButton(onPressed: () async{
           //       await FirebaseMessaging.instance
@@ -190,7 +196,7 @@ class CustomSendButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: Colors.blueAccent,
+            color: Colors.white,
           ),
           // gradient: LinearGradient(colors: mixColors),
           color: color ?? Colors.blueAccent,

@@ -19,10 +19,10 @@ class ChangePasswordScreen extends StatelessWidget {
       body: Form(
         key: formKey,
         child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           children: [
             Lottie.asset(
-              'images/change_password.json',
+              'images/society.json',
               height: 200,
               width: 200,
             ),

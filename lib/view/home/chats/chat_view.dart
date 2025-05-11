@@ -20,7 +20,6 @@ class ChatView extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          foregroundColor: Colors.transparent,
           elevation: 0,
           surfaceTintColor: Colors.transparent,
           title: Column(

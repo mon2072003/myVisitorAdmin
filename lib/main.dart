@@ -1,12 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:my_visitor_admin/view/auth/change_password_screen.dart';
 import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
 import 'package:my_visitor_admin/view/home/chats/contacts_support_view.dart';
 import 'package:my_visitor_admin/view/auth/forgot_password_screen.dart';
 import 'package:my_visitor_admin/view/auth/login_screen.dart';
 import 'package:my_visitor_admin/view/home/home_screen.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:my_visitor_admin/view/home/notifications/send_notifications_view.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -26,11 +28,11 @@ class MyVisitorAdmin extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My Visitor Admin',
-      themeMode: ThemeMode.dark,
-      darkTheme: ThemeData.dark(),
+      // themeMode: ThemeMode.dark,
+      // darkTheme: ThemeData.dark(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        brightness: Brightness.light,
+        brightness: Brightness.dark,
         fontFamily: 'Schyler',
       ),
 
@@ -41,6 +43,8 @@ class MyVisitorAdmin extends StatelessWidget {
         '/forgot-password':(context) => ForgotPasswordScreen(),
         '/login': (context) => LoginScreen(),
         '/ContactsSupportScreen': (context) => ContactsSupportScreen(),
+        '/SendNotifactionsSendView': (context)=> SendNotifactionsSendView(),
+        '/change-password' : (context)=> ChangePasswordScreen()
       },
       onGenerateRoute: (settings) {
         if (settings.name == ChatView.id) {

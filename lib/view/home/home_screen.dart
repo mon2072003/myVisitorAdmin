@@ -6,16 +6,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/view-model/home/navigator_cubit/navigator_cubit.dart';
 import 'package:my_visitor_admin/view/home/contacts/contacts_screen.dart';
-import 'package:my_visitor_admin/view/home/dashboard/dashboard_screen.dart';
 import 'package:my_visitor_admin/view/home/settings/settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   AuthViewModel authViewModel = AuthViewModel();
-  List<Widget> screens = [ContactsScreen(), DashboardScreen(), SettingsScreen()];
+  List<Widget> screens = [
+    ContactsScreen(),
+    SettingsScreen(),
+  ];
   HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => NavigatorCubit(),
       child: Scaffold(
@@ -26,11 +28,11 @@ class HomeScreen extends StatelessWidget {
                 accountName: Row(
                   children: [
                     Text(
-                      authViewModel.auth.currentUser!.displayName ?? "",
+                      authViewModel.auth.currentUser!.displayName ?? "admin",
                       style: TextStyle(color: Colors.black),
                     ),
-                    const SizedBox(width: 10,),
-                    Icon(Icons.verified,color: Colors.deepOrange,)
+                    const SizedBox(width: 10),
+                    Icon(Icons.verified, color: Colors.deepOrange),
                   ],
                 ),
                 accountEmail: Text(
@@ -45,9 +47,22 @@ class HomeScreen extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(color: Colors.white),
               ),
-              SizedBox(
-                height: 20,
+
+              SizedBox(height: 20),
+              ListTile(
+              leading: Icon(Icons.notification_add,color: Colors.deepOrange,),
+              title: Text("send notification"),
+              trailing: Icon(Icons.arrow_forward_ios_outlined,color: Colors.deepOrange,),
+              onTap: () => Navigator.of(context).pushNamed("/SendNotifactionsSendView"),
               ),
+              SizedBox(height: 20,),
+              ListTile(
+              leading: Icon(Icons.support_agent,color: Colors.deepOrange,),
+              title: Text("support chats"),
+              trailing: Icon(Icons.arrow_forward_ios_outlined,color: Colors.deepOrange,),
+              onTap: () => Navigator.of(context).pushNamed("/ContactsSupportScreen"),
+              ),
+              SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: OutlinedButton.icon(
@@ -76,32 +91,24 @@ class HomeScreen extends StatelessWidget {
         appBar: AppBar(
           title: Image.asset('images/home_logo.png'),
           centerTitle: true,
-          actions: [
-           IconButton(onPressed: (){
-            Navigator.of(context).pushNamed("/ContactsSupportScreen");
-           }, icon: Icon(Icons.support_agent,color: Colors.deepOrange,size: 40,))
-          ],
         ),
         bottomNavigationBar: BlocBuilder<NavigatorCubit, NavigatorStates>(
           builder: (context, state) {
             return CurvedNavigationBar(
-                backgroundColor: Colors.transparent,
+              backgroundColor: Colors.transparent,
               color: Colors.white,
               items: const [
                 Icon(
                   Icons.people_outline,
                   color: Colors.black,
                   semanticLabel: 'Contacts',
+                  size: 30,
                 ),
                 Icon(
-                  Icons.manage_accounts_outlined,
-                  color: Colors.black,
-                  semanticLabel: 'Dashboard',
-                ),
-                Icon(
-                  Icons.more_vert_outlined,
+                  Icons.settings_outlined,
                   color: Colors.black,
                   semanticLabel: 'Settings',
+                  size: 30,
                 ),
               ],
               onTap: (index) {

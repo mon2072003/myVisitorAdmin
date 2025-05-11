@@ -10,19 +10,14 @@ class ContactsSupportScreen extends StatelessWidget {
     return FirebaseFirestore.instance
         .collection('chat')
         .orderBy('createdAt', descending: true)
+        // .where("sender",isNotEqualTo: "hoadel2003@gmail.com")
         .snapshots()
         .map((snapshot) {
           final uniqueUsernames = <String>{};
-          final messageModels = <MessageModel>[];
-
-          for (var doc in snapshot.docs) {
-            final message = MessageModel.fromJson(doc.data());
-            if (uniqueUsernames.add(message.userName)) {
-              messageModels.add(message);
-            }
-          }
-
-          return messageModels;
+          return snapshot.docs
+              .map((doc) => MessageModel.fromJson(doc.data()))
+              .where((message) => uniqueUsernames.add(message.userName))
+              .toList();
         });
   }
 
@@ -87,16 +82,16 @@ class ContactsItem extends StatelessWidget {
             title: Text(
               messageModel.userName,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: (22),
                 fontWeight: FontWeight.bold,
               ),
             ),
-            // subtitle: Text(
-            //   messageModel.message,
-            //   style: AppStyles.style18(context),
-            // ),
-           // trailing: Image.asset(Assets.iconsChevronRight),
+            subtitle: Text(
+              messageModel.message,
+              style: TextStyle(color: Colors.black),
+            ),
+            trailing: Icon(Icons.arrow_forward_ios, color: Colors.deepOrange),
           ),
         ),
       ),
