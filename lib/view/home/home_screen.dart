@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/view-model/home/navigator_cubit/navigator_cubit.dart';
-import 'package:my_visitor_admin/view/home/contacts/contact_screen.dart';
+import 'package:my_visitor_admin/view/home/contacts/contacts_screen.dart';
 import 'package:my_visitor_admin/view/home/dashboard/dashboard_screen.dart';
 import 'package:my_visitor_admin/view/home/settings/settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   AuthViewModel authViewModel = AuthViewModel();
-  List<Widget> screens = [ContactScreen(), DashboardScreen(), SettingsScreen()];
+  List<Widget> screens = [ContactsScreen(), DashboardScreen(), SettingsScreen()];
   HomeScreen({super.key});
 
   @override

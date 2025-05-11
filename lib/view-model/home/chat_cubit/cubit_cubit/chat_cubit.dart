@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:meta/meta.dart';
 import 'package:my_visitor_admin/model/messages/message_model.dart';
-import 'package:my_visitor_admin/errors/firebase_err.dart';
+import 'package:my_visitor_admin/services/errors/firebase_err.dart';
 
 part 'chat_state.dart';
 

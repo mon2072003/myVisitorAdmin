@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
-import 'package:my_visitor_admin/view/home/chats/contacts_view.dart';
+import 'package:my_visitor_admin/view/home/chats/contacts_support_view.dart';
 import 'package:my_visitor_admin/view/auth/forgot_password_screen.dart';
 import 'package:my_visitor_admin/view/auth/login_screen.dart';
 import 'package:my_visitor_admin/view/home/home_screen.dart';

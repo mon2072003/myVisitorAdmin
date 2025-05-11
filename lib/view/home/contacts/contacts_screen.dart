@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_visitor_admin/view-model/home/contacts_cubit/contacts_cubit.dart';
 import 'package:my_visitor_admin/view/home/contacts/contact_info/contact_info.dart';
 
-class ContactScreen extends StatelessWidget {
-  const ContactScreen({super.key});
+class ContactsScreen extends StatelessWidget {
+  const ContactsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
