@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/widgets/custom_text_field.dart';
 
@@ -14,7 +15,7 @@ class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Forgot Password'), centerTitle: true),
+      appBar: AppBar(title: Text(S.of(context).forgot_password), centerTitle: true),
       body: Form(
         key: formKey,
         child: ListView(
@@ -27,18 +28,18 @@ class ForgotPasswordScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             CustomTextField(
-              hintText: 'Enter your email',
+              hintText: S.of(context).enter_your_email,
               obscureText: false,
               prefixIcon: Icons.email,
               keyboardType: TextInputType.emailAddress,
               controller: emailController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter your email';
+                  return S.of(context).please_enter_your_email;
                 } else if (!RegExp(
                   r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
                 ).hasMatch(value)) {
-                  return 'Please enter a valid email address';
+                  return S.of(context).please_enter_a_valid_email;
                 }
                 return null;
               },
@@ -53,8 +54,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                   authViewModel.resetPassword(emailController.text.trim());
                 }
               },
-              child: const Text(
-                'Reset Password',
+              child:  Text(
+                S.of(context).reset_password,
                 style: TextStyle(color: Colors.white),
               ),
             ),

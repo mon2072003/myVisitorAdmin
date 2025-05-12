@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/widgets/custom_text_field.dart';
 
@@ -17,7 +18,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login'), centerTitle: true),
+      appBar: AppBar(title: Text(S.of(context).login), centerTitle: true),
       body: Form(
         key: formKey,
         child: ListView(
@@ -33,32 +34,32 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 20),
             // Login form
             CustomTextField(
-              hintText: 'enter your email',
+              hintText: S.of(context).enter_your_email,
               obscureText: false,
               prefixIcon: Icons.email,
               keyboardType: TextInputType.emailAddress,
               controller: emailController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter your email';
+                  return S.of(context).please_enter_your_email;
                 } else if (!RegExp(
                   r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
                 ).hasMatch(value)) {
-                  return 'Please enter a valid email address';
+                  return S.of(context).please_enter_a_valid_email;
                 }
                 return null;
               },
             ),
             const SizedBox(height: 10),
             CustomTextField(
-              hintText: 'enter your password',
+              hintText: S.of(context).enter_your_password,
               obscureText: true,
               prefixIcon: Icons.password,
               keyboardType: TextInputType.visiblePassword,
               controller: passwordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter your password';
+                  return S.of(context).please_enter_your_password;
                 }
                 return null;
               },
@@ -79,9 +80,9 @@ class LoginScreen extends StatelessWidget {
                   credintial!.then((value) {
                     if (value.user == null) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
+                         SnackBar(
                           content: Text(
-                            'Login failed',
+                            S.of(context).login_failed,
                             style: TextStyle(color: Colors.white),
                           ),
                           backgroundColor: Colors.red,
@@ -89,9 +90,9 @@ class LoginScreen extends StatelessWidget {
                       );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
+                         SnackBar(
                           content: Text(
-                            'Login successful',
+                            S.of(context).login_successful,
                             style: TextStyle(color: Colors.white),
                           ),
                           backgroundColor: Colors.green,
@@ -112,16 +113,16 @@ class LoginScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Forgot Password?',
+                 Text(
+                  S.of(context).forgot_password,
                   // style: TextStyle(color: Colors.black),
                 ),
                 TextButton(
                   onPressed: () {
                   Navigator.pushNamed(context, '/forgot-password');
                   },
-                  child: const Text(
-                    'Change Password',
+                  child: Text(
+                    S.of(context).change_password,
                     style: TextStyle(color: Colors.deepOrange),
                   ),
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/model/contacts/hotel_reservation_model/hotel_reservation_model.dart';
 
 class HotelCard extends StatelessWidget {
@@ -37,7 +38,7 @@ class HotelCard extends StatelessWidget {
                         Icon(Icons.calendar_today, color: Colors.blue, size: 16),
                         const SizedBox(width: 4),
                         Text(
-                          "Check-in:",
+                          S.of(context).check_in,
                           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 color: Colors.grey[600],
                                 fontSize: 15,
@@ -62,7 +63,7 @@ class HotelCard extends StatelessWidget {
                         Icon(Icons.calendar_today_outlined, color: Colors.red, size: 16),
                         const SizedBox(width: 4),
                         Text(
-                          "Check-out:",
+                          S.of(context).check_out,
                           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 color: Colors.grey[600],
                                 fontSize: 15,
@@ -89,7 +90,7 @@ class HotelCard extends StatelessWidget {
                     Icon(Icons.attach_money, color: Colors.green, size: 16),
                     const SizedBox(width: 4),
                     Text(
-                      "Total Payment:",
+                      S.of(context).total_payment,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w600,
                             color: Colors.grey[600],

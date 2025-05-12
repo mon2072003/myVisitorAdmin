@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
 import 'package:my_visitor_admin/model/contacts/contacts_model.dart';
 import 'package:my_visitor_admin/view-model/home/hotel_reservation_cubit/hotel_reservation_cubit.dart';
@@ -62,7 +63,7 @@ class ContactInfo extends StatelessWidget {
                         context,
                       ).pushNamed(ChatView.id, arguments: contacts.email);
                     },
-                    label: Text("Send Message"),
+                    label: Text(S.of(context).send_message),
                     icon: Icon(Icons.message),
                   ),
                 ),
@@ -71,7 +72,7 @@ class ContactInfo extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
-                    "Booking reservations",
+                    S.of(context).booking_reservations,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),

@@ -1,0 +1,464 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'intl/messages_all.dart';
+
+// **************************************************************************
+// Generator: Flutter Intl IDE plugin
+// Made by Localizely
+// **************************************************************************
+
+// ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
+// ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
+// ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
+
+class S {
+  S();
+
+  static S? _current;
+
+  static S get current {
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
+    return _current!;
+  }
+
+  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
+
+  static Future<S> load(Locale locale) {
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
+    final localeName = Intl.canonicalizedLocale(name);
+    return initializeMessages(localeName).then((_) {
+      Intl.defaultLocale = localeName;
+      final instance = S();
+      S._current = instance;
+
+      return instance;
+    });
+  }
+
+  static S of(BuildContext context) {
+    final instance = S.maybeOf(context);
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
+    return instance!;
+  }
+
+  static S? maybeOf(BuildContext context) {
+    return Localizations.of<S>(context, S);
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
+  }
+
+  /// `Enter your email`
+  String get enter_your_email {
+    return Intl.message(
+      'Enter your email',
+      name: 'enter_your_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get enter_your_password {
+    return Intl.message(
+      'Enter your password',
+      name: 'enter_your_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your email`
+  String get please_enter_your_email {
+    return Intl.message(
+      'Please enter your email',
+      name: 'please_enter_your_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email`
+  String get please_enter_a_valid_email {
+    return Intl.message(
+      'Please enter a valid email',
+      name: 'please_enter_a_valid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your password`
+  String get please_enter_your_password {
+    return Intl.message(
+      'Please enter your password',
+      name: 'please_enter_your_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password?`
+  String get forgot_password {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login failed`
+  String get login_failed {
+    return Intl.message(
+      'Login failed',
+      name: 'login_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login successful`
+  String get login_successful {
+    return Intl.message(
+      'Login successful',
+      name: 'login_successful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Password`
+  String get change_password {
+    return Intl.message(
+      'Change Password',
+      name: 'change_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get reset_password {
+    return Intl.message(
+      'Reset Password',
+      name: 'reset_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your new password`
+  String get enter_your_new_password {
+    return Intl.message(
+      'Enter your new password',
+      name: 'enter_your_new_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your new password`
+  String get please_enter_your_new_password {
+    return Intl.message(
+      'Please enter your new password',
+      name: 'please_enter_your_new_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 6 characters`
+  String get password_must_be_at_least_6_characters {
+    return Intl.message(
+      'Password must be at least 6 characters',
+      name: 'password_must_be_at_least_6_characters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please confirm your new password`
+  String get please_confirm_your_new_password {
+    return Intl.message(
+      'Please confirm your new password',
+      name: 'please_confirm_your_new_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get passwords_do_not_match {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'passwords_do_not_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get password_changed_successfully {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'password_changed_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Support Team`
+  String get support_team {
+    return Intl.message(
+      'Support Team',
+      name: 'support_team',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Typically replies within 5 minutes`
+  String get Typically_replies_within_5_minutes {
+    return Intl.message(
+      'Typically replies within 5 minutes',
+      name: 'Typically_replies_within_5_minutes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chats`
+  String get chats {
+    return Intl.message('Chats', name: 'chats', desc: '', args: []);
+  }
+
+  /// `No contacts found`
+  String get no_contacts_found {
+    return Intl.message(
+      'No contacts found',
+      name: 'no_contacts_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Message`
+  String get send_message {
+    return Intl.message(
+      'Send Message',
+      name: 'send_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking Reservations`
+  String get booking_reservations {
+    return Intl.message(
+      'Booking Reservations',
+      name: 'booking_reservations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Notification`
+  String get send_notification {
+    return Intl.message(
+      'Send Notification',
+      name: 'send_notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get title {
+    return Intl.message('Title', name: 'title', desc: '', args: []);
+  }
+
+  /// `Subtitle`
+  String get subtitle {
+    return Intl.message('Subtitle', name: 'subtitle', desc: '', args: []);
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message('Send', name: 'send', desc: '', args: []);
+  }
+
+  /// `Send Done`
+  String get send_done {
+    return Intl.message('Send Done', name: 'send_done', desc: '', args: []);
+  }
+
+  /// `Please complete all fields`
+  String get complete_fields {
+    return Intl.message(
+      'Please complete all fields',
+      name: 'complete_fields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set Darkness`
+  String get set_darkeness {
+    return Intl.message(
+      'Set Darkness',
+      name: 'set_darkeness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can switch on and off the button`
+  String get you_can_switch_on_and_off_the_button {
+    return Intl.message(
+      'You can switch on and off the button',
+      name: 'you_can_switch_on_and_off_the_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Application Language`
+  String get choose_application_language {
+    return Intl.message(
+      'Choose Application Language',
+      name: 'choose_application_language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can drop and choose from the menu`
+  String get you_can_drop_and_choose_from_the_menu {
+    return Intl.message(
+      'You can drop and choose from the menu',
+      name: 'you_can_drop_and_choose_from_the_menu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Admin`
+  String get admin {
+    return Intl.message('Admin', name: 'admin', desc: '', args: []);
+  }
+
+  /// `Support Chats`
+  String get support_chats {
+    return Intl.message(
+      'Support Chats',
+      name: 'support_chats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
+
+  /// `Check In`
+  String get check_in {
+    return Intl.message('Check In', name: 'check_in', desc: '', args: []);
+  }
+
+  /// `Check Out`
+  String get check_out {
+    return Intl.message('Check Out', name: 'check_out', desc: '', args: []);
+  }
+
+  /// `Total Payment`
+  String get total_payment {
+    return Intl.message(
+      'Total Payment',
+      name: 'total_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to leave the chat?`
+  String get are_you_sure_you_want_to_leave_the_chat {
+    return Intl.message(
+      'Are you sure you want to leave the chat?',
+      name: 'are_you_sure_you_want_to_leave_the_chat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get something_went_wrong {
+    return Intl.message(
+      'Something went wrong',
+      name: 'something_went_wrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write a message`
+  String get write_message {
+    return Intl.message(
+      'Write a message',
+      name: 'write_message',
+      desc: '',
+      args: [],
+    );
+  }
+}
+
+class AppLocalizationDelegate extends LocalizationsDelegate<S> {
+  const AppLocalizationDelegate();
+
+  List<Locale> get supportedLocales {
+    return const <Locale>[
+      Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
+    ];
+  }
+
+  @override
+  bool isSupported(Locale locale) => _isSupported(locale);
+  @override
+  Future<S> load(Locale locale) => S.load(locale);
+  @override
+  bool shouldReload(AppLocalizationDelegate old) => false;
+
+  bool _isSupported(Locale locale) {
+    for (var supportedLocale in supportedLocales) {
+      if (supportedLocale.languageCode == locale.languageCode) {
+        return true;
+      }
+    }
+    return false;
+  }
+}

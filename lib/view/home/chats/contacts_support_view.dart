@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/model/messages/message_model.dart';
 import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
 
@@ -23,7 +24,7 @@ class ContactsSupportScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Chats")),
+      appBar: AppBar(title: Text(S.of(context).chats)),
       body: StreamBuilder<List<MessageModel>>(
         stream: getUniqueUsernames(),
         builder: (context, snapshot) {
@@ -32,7 +33,7 @@ class ContactsSupportScreen extends StatelessWidget {
           // }
 
           if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(child: Text("No contacts found"));
+            return Center(child: Text(S.of(context).no_contacts_found));
           }
 
           final messages = snapshot.data!;

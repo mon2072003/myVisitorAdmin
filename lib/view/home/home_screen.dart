@@ -3,6 +3,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/view-model/home/navigator_cubit/navigator_cubit.dart';
 import 'package:my_visitor_admin/view/home/contacts/contacts_screen.dart';
@@ -25,7 +26,7 @@ class HomeScreen extends StatelessWidget {
                 accountName: Row(
                   children: [
                     Text(
-                      authViewModel.auth.currentUser?.displayName ?? "admin",
+                      authViewModel.auth.currentUser?.displayName ?? S.of(context).admin,
                       style: TextStyle(color: Colors.black),
                     ),
                     const SizedBox(width: 10),
@@ -48,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 20),
               ListTile(
                 leading: Icon(Icons.notification_add, color: Colors.deepOrange),
-                title: Text("send notification"),
+                title: Text(S.of(context).send_notification),
                 trailing: Icon(
                   Icons.arrow_forward_ios_outlined,
                   color: Colors.deepOrange,
@@ -61,7 +62,7 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 20),
               ListTile(
                 leading: Icon(Icons.support_agent, color: Colors.deepOrange),
-                title: Text("support chats"),
+                title: Text(S.of(context).support_chats),
                 trailing: Icon(
                   Icons.arrow_forward_ios_outlined,
                   color: Colors.deepOrange,
@@ -75,7 +76,7 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: OutlinedButton.icon(
-                  label: Text("Logout"),
+                  label: Text(S.of(context).logout),
                   onPressed: () async {
                     await authViewModel.logout();
                     Navigator.pushNamedAndRemoveUntil(

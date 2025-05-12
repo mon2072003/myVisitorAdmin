@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/widgets/custom_text_field.dart';
 
@@ -15,7 +16,7 @@ class ChangePasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Change Password'), centerTitle: true),
+      appBar: AppBar(title: Text(S.of(context).change_password), centerTitle: true),
       body: Form(
         key: formKey,
         child: ListView(
@@ -28,32 +29,32 @@ class ChangePasswordScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             CustomTextField(
-              hintText: 'Enter your new password',
+              hintText: S.of(context).enter_your_new_password,
               obscureText: true,
               prefixIcon: Icons.lock_outline,
               keyboardType: TextInputType.visiblePassword,
               controller: newPasswordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter your new password';
+                  return S.of(context).please_enter_your_new_password;
                 } else if (value.length < 6) {
-                  return 'Password must be at least 6 characters long';
+                  return S.of(context).password_must_be_at_least_6_characters;
                 }
                 return null;
               },
             ),
             const SizedBox(height: 10),
             CustomTextField(
-              hintText: 'Confirm your new password',
+              hintText: S.of(context).confirm_password,
               obscureText: true,
               prefixIcon: Icons.lock_outline,
               keyboardType: TextInputType.visiblePassword,
               controller: confirmPasswordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please confirm your new password';
+                  return S.of(context).please_confirm_your_new_password;
                 } else if (value != newPasswordController.text) {
-                  return 'Passwords do not match';
+                  return S.of(context).passwords_do_not_match;
                 }
                 return null;
               },
@@ -67,7 +68,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 if (formKey.currentState!.validate()) {
                   authViewModel.changePassword(newPasswordController.text.trim()).then((_) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Password changed successfully')),
+                       SnackBar(content: Text(S.of(context).password_changed_successfully)),
                     );
                     Navigator.pop(context); // Go back to the previous screen
                   }).catchError((error) {
@@ -77,8 +78,8 @@ class ChangePasswordScreen extends StatelessWidget {
                   });
                 }
               },
-              child: const Text(
-                'Change Password',
+              child: Text(
+                S.of(context).change_password,
                 style: TextStyle(color: Colors.white),
               ),
             ),

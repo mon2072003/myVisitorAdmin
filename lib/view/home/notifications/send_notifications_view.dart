@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:http/http.dart' as http;
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/services/notifications/send_notifications.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -84,7 +85,7 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Send Notification'),
+        title: Text(S.of(context).send_notification),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10),
@@ -93,7 +94,7 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
           SizedBox(height: 20,),
           CustomTextFrom(
             hint: '',
-            label: "title",
+            label: S.of(context).title,
             controller: titleController,
             onChanged: (value) {
               titleController.text = value;
@@ -102,7 +103,7 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
           SizedBox(height: 10,),
           CustomTextFrom(
             hint: '',
-            label: "subtitle",
+            label: S.of(context).subtitle,
             controller: subTitlecontroller,
             onChanged: (value) {
               subTitlecontroller.text = value;
@@ -112,7 +113,7 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: CustomSendButton(
-              label: 'Send',
+              label: S.of(context).send,
               color: Colors.deepOrange,
               txtcolor: Colors.white,
               onTap: () async {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/view-model/home/chat_cubit/cubit_cubit/chat_cubit.dart';
 import 'package:my_visitor_admin/widgets/chat_widgets/chat_view_body.dart';
 
@@ -21,11 +22,11 @@ class ChatView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Support Team",
+                S.of(context).support_team,
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               Text(
-                "Typically replies within 5 minutes",
+                S.of(context).Typically_replies_within_5_minutes,
                 style: style16Gray(context),
               ),
             ],

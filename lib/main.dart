@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:my_visitor_admin/view-model/home/settings/darkeness_cubit/darkeness_cubit.dart';
-import 'package:my_visitor_admin/view-model/home/settings/localization_cubit/localization_cubit.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
+import 'package:my_visitor_admin/view-model/home/settings/cubit/app_cubit.dart';
 import 'package:my_visitor_admin/view/auth/change_password_screen.dart';
 import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
 import 'package:my_visitor_admin/view/home/chats/contacts_support_view.dart';
@@ -15,6 +15,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:my_visitor_admin/view/home/notifications/send_notifications_view.dart';
 import 'firebase_options.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +26,18 @@ void main() async {
   final appDocumentDir = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDir.path);
   await Hive.openBox('darkeness');
-  await Hive.box('darkeness').put('darkeness', true);
+  await Hive.openBox('language');
+  
+  var box = Hive.box('darkeness');
+  var languageBox = Hive.box('language');
+  
+  if (!languageBox.containsKey('language')) {
+    await languageBox.put('language', 'en');
+  }
+
+  if (!box.containsKey('darkeness')) {
+    await box.put('darkeness', true);
+  }
   runApp(const MyVisitorAdmin());
 }
 
@@ -34,17 +46,23 @@ class MyVisitorAdmin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => DarkenessCubit()),
-        BlocProvider(create: (context) => LocalizationCubit()),
-      ],
-      child: BlocBuilder<DarkenessCubit, DarkenessState>(
+    return BlocProvider(
+      create: (context) => AppCubit(),
+      child: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
-          if (state is DarkenessInitial) {
-            context.read<DarkenessCubit>().getDarkeness();
+          if (state is AppInitial) {
+            context.read<AppCubit>().getDarkeness();
+            context.read<AppCubit>().getLanguage();
           }
           return MaterialApp(
+            localizationsDelegates: [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            locale: Locale(state.language),
             debugShowCheckedModeBanner: false,
             title: 'My Visitor Admin',
             theme: ThemeData(
