@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
                 accountName: Row(
                   children: [
                     Text(
-                      authViewModel.auth.currentUser!.displayName ?? "admin",
+                      authViewModel.auth.currentUser?.displayName ?? "admin",
                       style: TextStyle(color: Colors.black),
                     ),
                     const SizedBox(width: 10),
@@ -33,12 +33,12 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 accountEmail: Text(
-                  authViewModel.auth.currentUser!.email ?? "",
+                  authViewModel.auth.currentUser?.email ?? "",
                   style: TextStyle(color: Colors.black),
                 ),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: NetworkImage(
-                    authViewModel.auth.currentUser!.photoURL ??
+                    authViewModel.auth.currentUser?.photoURL ??
                         "https://th.bing.com/th/id/OIP.yNEIwvAlvp4q71Mfj0NZaQHaHa?cb=iwc1&rs=1&pid=ImgDetMain",
                   ),
                 ),

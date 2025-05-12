@@ -6,7 +6,7 @@ sealed class DarkenessState {
 }
 
 final class DarkenessInitial extends DarkenessState {
-  DarkenessInitial():super(darkeness: Hive.box('darkeness').get('darkeness') ?? false);
+  DarkenessInitial():super(darkeness: Hive.box('darkeness').get('darkeness') ?? true);
 }
 final class DarkenessChanged extends DarkenessState {
   DarkenessChanged({required super.darkeness});

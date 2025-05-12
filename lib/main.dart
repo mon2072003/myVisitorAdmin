@@ -25,6 +25,7 @@ void main() async {
   final appDocumentDir = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDir.path);
   await Hive.openBox('darkeness');
+  await Hive.box('darkeness').put('darkeness', true);
   runApp(const MyVisitorAdmin());
 }
 
@@ -40,30 +41,22 @@ class MyVisitorAdmin extends StatelessWidget {
       ],
       child: BlocBuilder<DarkenessCubit, DarkenessState>(
         builder: (context, state) {
-          BlocProvider.of<DarkenessCubit>(context).getDarkeness();
+          if (state is DarkenessInitial) {
+            context.read<DarkenessCubit>().getDarkeness();
+          }
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'My Visitor Admin',
             theme: ThemeData(
               primarySwatch: Colors.blue,
-              brightness:
-                  state.darkeness == true
-                      ? Brightness.dark
-                      : Brightness.light,
+              brightness: state.darkeness ? Brightness.dark : Brightness.light,
               fontFamily: 'Schyler',
             ),
-
             initialRoute:
-                FirebaseAuth.instance.currentUser != null ? '/home' : '/login',
-            routes: {
-              '/home': (context) => HomeScreen(),
-              '/forgot-password': (context) => ForgotPasswordScreen(),
-              '/login': (context) => LoginScreen(),
-              '/ContactsSupportScreen': (context) => ContactsSupportScreen(),
-              '/SendNotifactionsSendView':
-                  (context) => SendNotifactionsSendView(),
-              '/change-password': (context) => ChangePasswordScreen(),
-            },
+                FirebaseAuth.instance.currentUser?.email == null
+                    ? '/login'
+                    : '/home',
+            routes: routes,
             onGenerateRoute: (settings) {
               if (settings.name == ChatView.id) {
                 final contactEmail = settings.arguments as String;
@@ -79,3 +72,12 @@ class MyVisitorAdmin extends StatelessWidget {
     );
   }
 }
+
+Map<String, Widget Function(BuildContext)> routes = {
+  '/home': (context) => HomeScreen(),
+  '/forgot-password': (context) => ForgotPasswordScreen(),
+  '/login': (context) => LoginScreen(),
+  '/ContactsSupportScreen': (context) => ContactsSupportScreen(),
+  '/SendNotifactionsSendView': (context) => SendNotifactionsSendView(),
+  '/change-password': (context) => ChangePasswordScreen(),
+};

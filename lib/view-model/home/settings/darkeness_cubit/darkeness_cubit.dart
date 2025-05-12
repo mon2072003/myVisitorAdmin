@@ -6,12 +6,12 @@ part 'darkeness_state.dart';
 class DarkenessCubit extends Cubit<DarkenessState> {
   DarkenessCubit() : super(DarkenessInitial());
   Box darkenessBox = Hive.box('darkeness');
-  void setDarkeness(bool darkeness) {
+  void setDarkeness(bool darkeness) async{
     darkenessBox.put('darkeness', darkeness);
     emit(DarkenessChanged(darkeness: darkeness));
   }
   void getDarkeness() {
-  bool darkeness = darkenessBox.get('darkeness');
+  bool darkeness = darkenessBox.get('darkeness')??true;
   emit(DarkenessChanged(darkeness: darkeness));
   }
 }

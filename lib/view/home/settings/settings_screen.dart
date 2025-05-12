@@ -22,7 +22,9 @@ class SettingsScreen extends StatelessWidget {
           Divider(),
           BlocBuilder<DarkenessCubit, DarkenessState>(
             builder: (context, state) {
-              BlocProvider.of<DarkenessCubit>(context).getDarkeness();
+              if (state is DarkenessInitial) {
+                BlocProvider.of<DarkenessCubit>(context).getDarkeness();
+              }
               return SwitchListTile(
                     value: state.darkeness,
                   onChanged: (value) {
