@@ -10,13 +10,12 @@ class ContactsSupportScreen extends StatelessWidget {
     return FirebaseFirestore.instance
         .collection('chat')
         .orderBy('createdAt', descending: true)
-        // .where("sender",isNotEqualTo: "hoadel2003@gmail.com")
         .snapshots()
         .map((snapshot) {
           final uniqueUsernames = <String>{};
           return snapshot.docs
               .map((doc) => MessageModel.fromJson(doc.data()))
-              .where((message) => uniqueUsernames.add(message.userName))
+              .where((message) => uniqueUsernames.add(message.sender))
               .toList();
         });
   }
@@ -28,9 +27,9 @@ class ContactsSupportScreen extends StatelessWidget {
       body: StreamBuilder<List<MessageModel>>(
         stream: getUniqueUsernames(),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
-          }
+          // if (snapshot.connectionState == ConnectionState.waiting) {
+          //   return Center(child: CircularProgressIndicator(color: Colors.deepOrange,));
+          // }
 
           if (!snapshot.hasData || snapshot.data!.isEmpty) {
             return Center(child: Text("No contacts found"));

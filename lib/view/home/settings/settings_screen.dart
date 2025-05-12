@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_visitor_admin/view-model/home/settings/darkeness_cubit/darkeness_cubit.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -18,14 +20,22 @@ class SettingsScreen extends StatelessWidget {
             onTap: () => Navigator.of(context).pushNamed("/change-password"),
           ),
           Divider(),
-          SwitchListTile(
-            value: true,
-            onChanged: (value) {},
-            activeTrackColor: Colors.deepOrange,
-            activeColor: Colors.white,
-            inactiveThumbColor: Colors.deepOrange,         
-            title: Text("set darkeness"),
-            subtitle: Text("you can switch on and of the button"),
+          BlocBuilder<DarkenessCubit, DarkenessState>(
+            builder: (context, state) {
+              BlocProvider.of<DarkenessCubit>(context).getDarkeness();
+              return SwitchListTile(
+                    value: state.darkeness,
+                  onChanged: (value) {
+                  BlocProvider.of<DarkenessCubit>(context)
+                    .setDarkeness(value);
+                  },
+                activeTrackColor: Colors.deepOrange,
+                activeColor: Colors.white,
+                inactiveThumbColor: Colors.deepOrange,
+                title: Text("set darkeness"),
+                subtitle: Text("you can switch on and of the button"),
+              );
+            },
           ),
           Divider(),
           ListTile(
@@ -42,7 +52,7 @@ class SettingsScreen extends StatelessWidget {
               onChanged: (value) {},
             ),
           ),
-          Divider()
+          Divider(),
         ],
       ),
     );

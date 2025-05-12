@@ -31,7 +31,7 @@ class MyMessage extends StatelessWidget {
                   child: Text(
                     messageModel.message,
                     style: const TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),
@@ -98,7 +98,7 @@ class FriendMessage extends StatelessWidget {
                   child: Text(
                     messageModel.message,
                     style: const TextStyle(
-                      color: Color.fromARGB(53, 0, 0, 0),
+                      color: Colors.black,
                     ),
                   ),
                 ),

@@ -10,10 +10,7 @@ import 'package:my_visitor_admin/view/home/settings/settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   AuthViewModel authViewModel = AuthViewModel();
-  List<Widget> screens = [
-    ContactsScreen(),
-    SettingsScreen(),
-  ];
+  List<Widget> screens = [ContactsScreen(), SettingsScreen()];
   HomeScreen({super.key});
 
   @override
@@ -50,19 +47,31 @@ class HomeScreen extends StatelessWidget {
 
               SizedBox(height: 20),
               ListTile(
-              leading: Icon(Icons.notification_add,color: Colors.deepOrange,),
-              title: Text("send notification"),
-              trailing: Icon(Icons.arrow_forward_ios_outlined,color: Colors.deepOrange,),
-              onTap: () => Navigator.of(context).pushNamed("/SendNotifactionsSendView"),
+                leading: Icon(Icons.notification_add, color: Colors.deepOrange),
+                title: Text("send notification"),
+                trailing: Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color: Colors.deepOrange,
+                ),
+                onTap:
+                    () => Navigator.of(
+                      context,
+                    ).pushNamed("/SendNotifactionsSendView"),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               ListTile(
-              leading: Icon(Icons.support_agent,color: Colors.deepOrange,),
-              title: Text("support chats"),
-              trailing: Icon(Icons.arrow_forward_ios_outlined,color: Colors.deepOrange,),
-              onTap: () => Navigator.of(context).pushNamed("/ContactsSupportScreen"),
+                leading: Icon(Icons.support_agent, color: Colors.deepOrange),
+                title: Text("support chats"),
+                trailing: Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color: Colors.deepOrange,
+                ),
+                onTap:
+                    () => Navigator.of(
+                      context,
+                    ).pushNamed("/ContactsSupportScreen"),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: OutlinedButton.icon(

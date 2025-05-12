@@ -1,6 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
+import 'package:my_visitor_admin/view-model/home/settings/darkeness_cubit/darkeness_cubit.dart';
+import 'package:my_visitor_admin/view-model/home/settings/localization_cubit/localization_cubit.dart';
 import 'package:my_visitor_admin/view/auth/change_password_screen.dart';
 import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
 import 'package:my_visitor_admin/view/home/chats/contacts_support_view.dart';
@@ -10,6 +14,7 @@ import 'package:my_visitor_admin/view/home/home_screen.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:my_visitor_admin/view/home/notifications/send_notifications_view.dart';
 import 'firebase_options.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +22,9 @@ void main() async {
   await Future.delayed(const Duration(seconds: 3));
   FlutterNativeSplash.remove();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  final appDocumentDir = await getApplicationDocumentsDirectory();
+  Hive.init(appDocumentDir.path);
+  await Hive.openBox('darkeness');
   runApp(const MyVisitorAdmin());
 }
 
@@ -25,36 +33,49 @@ class MyVisitorAdmin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'My Visitor Admin',
-      // themeMode: ThemeMode.dark,
-      // darkTheme: ThemeData.dark(),
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        brightness: Brightness.dark,
-        fontFamily: 'Schyler',
-      ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => DarkenessCubit()),
+        BlocProvider(create: (context) => LocalizationCubit()),
+      ],
+      child: BlocBuilder<DarkenessCubit, DarkenessState>(
+        builder: (context, state) {
+          BlocProvider.of<DarkenessCubit>(context).getDarkeness();
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'My Visitor Admin',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+              brightness:
+                  state.darkeness == true
+                      ? Brightness.dark
+                      : Brightness.light,
+              fontFamily: 'Schyler',
+            ),
 
-      initialRoute:
-          FirebaseAuth.instance.currentUser != null ? '/home' : '/login',
-      routes: {
-        '/home': (context) => HomeScreen(),
-        '/forgot-password':(context) => ForgotPasswordScreen(),
-        '/login': (context) => LoginScreen(),
-        '/ContactsSupportScreen': (context) => ContactsSupportScreen(),
-        '/SendNotifactionsSendView': (context)=> SendNotifactionsSendView(),
-        '/change-password' : (context)=> ChangePasswordScreen()
-      },
-      onGenerateRoute: (settings) {
-        if (settings.name == ChatView.id) {
-          final contactEmail = settings.arguments as String;
-          return MaterialPageRoute(
-            builder: (context) => ChatView(contactEmail: contactEmail),
+            initialRoute:
+                FirebaseAuth.instance.currentUser != null ? '/home' : '/login',
+            routes: {
+              '/home': (context) => HomeScreen(),
+              '/forgot-password': (context) => ForgotPasswordScreen(),
+              '/login': (context) => LoginScreen(),
+              '/ContactsSupportScreen': (context) => ContactsSupportScreen(),
+              '/SendNotifactionsSendView':
+                  (context) => SendNotifactionsSendView(),
+              '/change-password': (context) => ChangePasswordScreen(),
+            },
+            onGenerateRoute: (settings) {
+              if (settings.name == ChatView.id) {
+                final contactEmail = settings.arguments as String;
+                return MaterialPageRoute(
+                  builder: (context) => ChatView(contactEmail: contactEmail),
+                );
+              }
+              return null;
+            },
           );
-        }
-        return null;
-      },
+        },
+      ),
     );
   }
 }

@@ -22,7 +22,7 @@ class HotelCard extends StatelessWidget {
               hotel.hotel.name,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.blue,
                   ),
             ),
             const SizedBox(height: 8),
@@ -48,7 +48,7 @@ class HotelCard extends StatelessWidget {
                     Text(
                       hotel.bookDetails.checkIn,
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            color: Colors.white,
+                            color: Colors.yellow[700],
                           ),
                     ),
                   ],
@@ -73,7 +73,7 @@ class HotelCard extends StatelessWidget {
                     Text(
                       hotel.bookDetails.checkOut,
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            color: Colors.white,
+                            color: Colors.yellow[700],
                           ),
                     ),
                   ],

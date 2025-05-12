@@ -80,6 +80,11 @@ class ContactInfo extends StatelessWidget {
                     context.read<HotelReservationCubit>().getHotels(
                       email: contacts.email!,
                     );
+                    if (state.hotels.isEmpty) {
+                      return Center(
+                        child: Image.asset("images/pyramids.png",height: 200,width: 200,),
+                      );
+                    }
                     return ListView.builder(
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       physics: NeverScrollableScrollPhysics(),
