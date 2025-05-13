@@ -150,18 +150,22 @@ class HomeScreen extends StatelessWidget {
         bottomNavigationBar: BlocBuilder<NavigatorCubit, NavigatorStates>(
           builder: (context, state) {
             return CurvedNavigationBar(
-              backgroundColor: Colors.transparent,
-              color: Colors.white,
-              items: const [
+              height: 60,
+              backgroundColor:  Colors.black,
+              color: const Color.fromARGB(255, 30, 30, 30), 
+              buttonBackgroundColor: const Color.fromARGB(255, 85, 55, 10),
+              animationDuration: const Duration(milliseconds: 600),
+              animationCurve: Curves.easeInOut,
+              items: [
                 Icon(
                   Icons.people_outline,
-                  color: Colors.black,
+                  color: state.currentIndex== 0? Colors.deepOrange:Colors.white,
                   semanticLabel: 'Contacts',
                   size: 30,
                 ),
                 Icon(
                   Icons.settings_outlined,
-                  color: Colors.black,
+                  color: state.currentIndex== 1? Colors.deepOrange:Colors.white,
                   semanticLabel: 'Settings',
                   size: 30,
                 ),
