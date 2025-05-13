@@ -144,14 +144,18 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          title: Image.asset('images/home_logo.png'),
+            title: Image.asset(
+            'images/home_logo.png',
+            color: Colors.amber,
+            filterQuality: FilterQuality.high,
+            ),
           centerTitle: true,
         ),
         bottomNavigationBar: BlocBuilder<NavigatorCubit, NavigatorStates>(
           builder: (context, state) {
             return CurvedNavigationBar(
               height: 60,
-              backgroundColor:  Colors.black,
+              backgroundColor:Colors.black,
               color: const Color.fromARGB(255, 30, 30, 30), 
               buttonBackgroundColor: const Color.fromARGB(255, 85, 55, 10),
               animationDuration: const Duration(milliseconds: 600),
@@ -161,13 +165,13 @@ class HomeScreen extends StatelessWidget {
                   Icons.people_outline,
                   color: state.currentIndex== 0? Colors.deepOrange:Colors.white,
                   semanticLabel: 'Contacts',
-                  size: 30,
+                  size: 35,
                 ),
                 Icon(
                   Icons.settings_outlined,
                   color: state.currentIndex== 1? Colors.deepOrange:Colors.white,
                   semanticLabel: 'Settings',
-                  size: 30,
+                  size: 35,
                 ),
               ],
               onTap: (index) {
