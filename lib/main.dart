@@ -6,6 +6,7 @@ import 'package:hive/hive.dart';
 import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/view-model/home/settings/cubit/app_cubit.dart';
 import 'package:my_visitor_admin/view/auth/change_password_screen.dart';
+import 'package:my_visitor_admin/view/home/about-us/about_us_screen.dart';
 import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
 import 'package:my_visitor_admin/view/home/chats/contacts_support_view.dart';
 import 'package:my_visitor_admin/view/auth/forgot_password_screen.dart';
@@ -23,21 +24,7 @@ void main() async {
   await Future.delayed(const Duration(seconds: 3));
   FlutterNativeSplash.remove();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  final appDocumentDir = await getApplicationDocumentsDirectory();
-  Hive.init(appDocumentDir.path);
-  await Hive.openBox('darkeness');
-  await Hive.openBox('language');
-  
-  var box = Hive.box('darkeness');
-  var languageBox = Hive.box('language');
-  
-  if (!languageBox.containsKey('language')) {
-    await languageBox.put('language', 'en');
-  }
-
-  if (!box.containsKey('darkeness')) {
-    await box.put('darkeness', true);
-  }
+  await setupHive();
   runApp(const MyVisitorAdmin());
 }
 
@@ -98,4 +85,23 @@ Map<String, Widget Function(BuildContext)> routes = {
   '/ContactsSupportScreen': (context) => ContactsSupportScreen(),
   '/SendNotifactionsSendView': (context) => SendNotifactionsSendView(),
   '/change-password': (context) => ChangePasswordScreen(),
+  '/about-us': (context) => AboutUsScreen(),
 };
+
+Future<void> setupHive() async {
+  final appDocumentDir = await getApplicationDocumentsDirectory();
+  Hive.init(appDocumentDir.path);
+  await Hive.openBox('darkeness');
+  await Hive.openBox('language');
+  
+  var box = Hive.box('darkeness');
+  var languageBox = Hive.box('language');
+  
+  if (!languageBox.containsKey('language')) {
+    await languageBox.put('language', 'en');
+  }
+
+  if (!box.containsKey('darkeness')) {
+    await box.put('darkeness', true);
+  }
+}

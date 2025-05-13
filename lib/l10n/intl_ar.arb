@@ -42,5 +42,7 @@
     "total_payment": "إجمالي الدفع",
     "are_you_sure_you_want_to_leave_the_chat": "هل أنت متأكد أنك تريد مغادرة الدردشة؟",
     "something_went_wrong": "حدث خطأ ما",
-    "write_message": "اكتب رسالة"
+    "write_message": "اكتب رسالة",
+    "view_profile": "عرض الملف الشخصي",
+    "about_us": "معلومات عنا"
 }

@@ -17,4 +17,18 @@ Future<List<ContactsModel>> getContacts() async {
 return users;
 }
 
+static Future<ContactsModel?> getCurrentUserByEmail(String email) async {
+  final firestore = FirebaseFirestore.instance;
+  final usersCollection = firestore.collection('users');
+  try {
+    final querySnapshot = await usersCollection.where('email', isEqualTo: email).get();
+    if (querySnapshot.docs.isNotEmpty) {
+      return ContactsModel.fromList(querySnapshot.docs.first.data());
+    }
+  } catch (e) {
+    debugPrint('Error fetching user by email: $e');
+  }
+  return null;
+}
+
 }

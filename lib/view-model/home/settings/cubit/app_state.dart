@@ -10,7 +10,7 @@ final class AppInitial extends AppState {
   AppInitial()
     : super(
         darkeness: Hive.box('darkeness').get('darkeness') ?? true,
-        language: "en",
+        language: Hive.box('language').get('language') ?? 'en',
       );
 }
 

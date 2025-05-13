@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Typically_replies_within_5_minutes": MessageLookupByLibrary.simpleMessage(
       "Typically replies within 5 minutes",
     ),
+    "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
     "admin": MessageLookupByLibrary.simpleMessage("Admin"),
     "are_you_sure_you_want_to_leave_the_chat":
         MessageLookupByLibrary.simpleMessage(
@@ -106,6 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "support_team": MessageLookupByLibrary.simpleMessage("Support Team"),
     "title": MessageLookupByLibrary.simpleMessage("Title"),
     "total_payment": MessageLookupByLibrary.simpleMessage("Total Payment"),
+    "view_profile": MessageLookupByLibrary.simpleMessage("View Profile"),
     "write_message": MessageLookupByLibrary.simpleMessage("Write a message"),
     "you_can_drop_and_choose_from_the_menu":
         MessageLookupByLibrary.simpleMessage(

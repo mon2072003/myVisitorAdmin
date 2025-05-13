@@ -434,6 +434,21 @@ class S {
       args: [],
     );
   }
+
+  /// `View Profile`
+  String get view_profile {
+    return Intl.message(
+      'View Profile',
+      name: 'view_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About Us`
+  String get about_us {
+    return Intl.message('About Us', name: 'about_us', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

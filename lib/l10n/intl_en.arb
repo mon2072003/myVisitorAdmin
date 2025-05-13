@@ -42,5 +42,7 @@
     "total_payment": "Total Payment",
     "are_you_sure_you_want_to_leave_the_chat": "Are you sure you want to leave the chat?",
     "something_went_wrong": "Something went wrong",
-    "write_message": "Write a message"
+    "write_message": "Write a message",
+    "view_profile": "View Profile",
+    "about_us": "About Us"
 }

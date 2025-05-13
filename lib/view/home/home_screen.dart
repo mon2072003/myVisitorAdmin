@@ -1,11 +1,15 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_visitor_admin/generated/l10n.dart';
+import 'package:my_visitor_admin/model/contacts/contacts_model.dart';
+import 'package:my_visitor_admin/services/contacts/contacts.dart';
 import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/view-model/home/navigator_cubit/navigator_cubit.dart';
+import 'package:my_visitor_admin/view/home/contacts/contact_info/contact_info.dart';
 import 'package:my_visitor_admin/view/home/contacts/contacts_screen.dart';
 import 'package:my_visitor_admin/view/home/settings/settings_screen.dart';
 
@@ -26,7 +30,8 @@ class HomeScreen extends StatelessWidget {
                 accountName: Row(
                   children: [
                     Text(
-                      authViewModel.auth.currentUser?.displayName ?? S.of(context).admin,
+                      authViewModel.auth.currentUser?.displayName ??
+                          S.of(context).admin,
                       style: TextStyle(color: Colors.black),
                     ),
                     const SizedBox(width: 10),
@@ -45,6 +50,31 @@ class HomeScreen extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(color: Colors.white),
               ),
+              SizedBox(height: 20),
+
+              ListTile(
+                leading: Icon(
+                  Icons.account_circle_outlined,
+                  color: Colors.deepOrange,
+                ),
+                title: Text(S.of(context).view_profile),
+                trailing: Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color: Colors.deepOrange,
+                ),
+                onTap: () async{
+                  ContactsModel? user = await ContactsAPI.getCurrentUserByEmail(
+                    FirebaseAuth.instance.currentUser!.email!,
+                  );
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => ContactInfo(
+                        contacts: user!,
+                      ),
+                    ),
+                  );
+                },
+              ),
 
               SizedBox(height: 20),
               ListTile(
@@ -60,6 +90,7 @@ class HomeScreen extends StatelessWidget {
                     ).pushNamed("/SendNotifactionsSendView"),
               ),
               SizedBox(height: 20),
+
               ListTile(
                 leading: Icon(Icons.support_agent, color: Colors.deepOrange),
                 title: Text(S.of(context).support_chats),
@@ -72,6 +103,20 @@ class HomeScreen extends StatelessWidget {
                       context,
                     ).pushNamed("/ContactsSupportScreen"),
               ),
+              SizedBox(height: 20),
+              ListTile(
+                leading: Icon(Icons.info_outline, color: Colors.deepOrange),
+                title: Text(S.of(context).about_us),
+                trailing: Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color: Colors.deepOrange,
+                ),
+                onTap:
+                    () => Navigator.of(
+                      context,
+                    ).pushNamed("/about-us"),
+              ),
+
               SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),

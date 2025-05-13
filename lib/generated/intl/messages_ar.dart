@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Typically_replies_within_5_minutes": MessageLookupByLibrary.simpleMessage(
       "عادةً ما يتم الرد خلال 5 دقائق",
     ),
+    "about_us": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
     "admin": MessageLookupByLibrary.simpleMessage("المسؤول"),
     "are_you_sure_you_want_to_leave_the_chat":
         MessageLookupByLibrary.simpleMessage(
@@ -104,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "support_team": MessageLookupByLibrary.simpleMessage("فريق الدعم"),
     "title": MessageLookupByLibrary.simpleMessage("العنوان"),
     "total_payment": MessageLookupByLibrary.simpleMessage("إجمالي الدفع"),
+    "view_profile": MessageLookupByLibrary.simpleMessage("عرض الملف الشخصي"),
     "write_message": MessageLookupByLibrary.simpleMessage("اكتب رسالة"),
     "you_can_drop_and_choose_from_the_menu":
         MessageLookupByLibrary.simpleMessage(
