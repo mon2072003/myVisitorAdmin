@@ -17,9 +17,9 @@ class ChangeAccountInfoScreen extends StatelessWidget {
   final AuthViewModel authViewModel = AuthViewModel();
   ContactsModel contactModel;
 
-  ChangeAccountInfoScreen({super.key, required this.contactModel}) {
-    nameController.text = contactModel.name!;
-    phoneController.text = contactModel.phoneNumber!;
+  ChangeAccountInfoScreen({super.key,required this.contactModel}) {
+    nameController.text = contactModel.name??"not available";
+    phoneController.text = contactModel.phoneNumber??"not available";
   }
 
   @override
