@@ -44,5 +44,26 @@
     "something_went_wrong": "حدث خطأ ما",
     "write_message": "اكتب رسالة",
     "view_profile": "عرض الملف الشخصي",
-    "about_us": "معلومات عنا"
+    "about_us": "معلومات عنا",
+    "view_details": "عرض التفاصيل",
+    "hotel_reservation_info": "معلومات حجز الفندق",
+    "image_not_available": "الصورة غير متاحة",
+    "hotel_name": "اسم الفندق",
+    "hotel_rating": "تقييم الفندق",
+    "guests": "الضيوف",
+    "payment_info": "معلومات الدفع",
+    "total_amount": "المبلغ الإجمالي",
+    "payment_status": "حالة الدفع",
+    "payment_successful": "تم الدفع بنجاح",
+    "payment_failed": "فشل الدفع",
+    "change_account_info": "تغيير معلومات الحساب",
+    "enter_your_name": "أدخل اسمك",
+    "please_enter_your_name": "يرجى إدخال اسمك",
+    "enter_your_phone_number": "أدخل رقم هاتفك",
+    "please_enter_your_phone_number": "يرجى إدخال رقم هاتفك",
+    "please_enter_a_valid_phone_number": "يرجى إدخال رقم هاتف صالح",
+    "update_info": "تحديث المعلومات",
+    "select_image": "اختر صورة",
+    "account_info_updated_successfully": "تم تحديث معلومات الحساب بنجاح"
+
 }

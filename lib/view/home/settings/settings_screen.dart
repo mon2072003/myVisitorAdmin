@@ -1,7 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_visitor_admin/generated/l10n.dart';
-import 'package:my_visitor_admin/view-model/home/settings/cubit/app_cubit.dart';
+import 'package:my_visitor_admin/model/contacts/contacts_model.dart';
+import 'package:my_visitor_admin/services/contacts/contacts.dart';
+import 'package:my_visitor_admin/view-model/home/settings/app-cubit/app_cubit.dart';
+import 'package:my_visitor_admin/view/home/settings/change-account-info/change_account_info_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -11,6 +15,23 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
+          ListTile(
+            leading: Icon(Icons.edit, color: Colors.deepOrange),
+            title: Text(S.of(context).change_account_info),
+            trailing: Icon(
+              Icons.arrow_forward_ios_outlined,
+              color: Colors.deepOrange,
+            ),
+            onTap: () async{
+              ContactsModel? contactModel =await ContactsAPI.getCurrentUserByEmail(FirebaseAuth.instance.currentUser!.email!);
+              Navigator.of(context).push(MaterialPageRoute(builder: 
+              (context) => ChangeAccountInfoScreen(
+                contactModel: contactModel!,
+              ),
+            ));
+            },
+          ),
+          Divider(),
           ListTile(
             leading: Icon(Icons.password_outlined, color: Colors.deepOrange),
             title: Text(S.of(context).change_password),

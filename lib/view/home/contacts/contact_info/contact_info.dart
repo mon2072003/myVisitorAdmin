@@ -19,7 +19,7 @@ class ContactInfo extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
-              expandedHeight: 200,
+              expandedHeight: 350,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.network(
                   contacts.profileImageUrl!,
@@ -83,11 +83,16 @@ class ContactInfo extends StatelessWidget {
                     );
                     if (state.hotels.isEmpty) {
                       return Center(
-                        child: Image.asset("images/pyramids.png",height: 200,width: 200,),
+                        child: Image.asset(
+                          "images/pyramids.png",
+                          height: 200,
+                          width: 200,
+                        ),
                       );
                     }
                     return ListView.builder(
                       padding: EdgeInsets.symmetric(horizontal: 10),
+                      reverse: true,
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemCount: state.hotels.length,

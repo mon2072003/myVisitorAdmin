@@ -22,96 +22,112 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "Typically_replies_within_5_minutes": MessageLookupByLibrary.simpleMessage(
-      "عادةً ما يتم الرد خلال 5 دقائق",
-    ),
-    "about_us": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
-    "admin": MessageLookupByLibrary.simpleMessage("المسؤول"),
-    "are_you_sure_you_want_to_leave_the_chat":
-        MessageLookupByLibrary.simpleMessage(
-          "هل أنت متأكد أنك تريد مغادرة الدردشة؟",
-        ),
-    "booking_reservations": MessageLookupByLibrary.simpleMessage("حجوزات"),
-    "change_password": MessageLookupByLibrary.simpleMessage(
-      "تغيير كلمة المرور",
-    ),
-    "chats": MessageLookupByLibrary.simpleMessage("الدردشات"),
-    "check_in": MessageLookupByLibrary.simpleMessage("تسجيل الوصول"),
-    "check_out": MessageLookupByLibrary.simpleMessage("تسجيل المغادرة"),
-    "choose_application_language": MessageLookupByLibrary.simpleMessage(
-      "اختر لغة التطبيق",
-    ),
-    "complete_fields": MessageLookupByLibrary.simpleMessage(
-      "يرجى إكمال الحقول",
-    ),
-    "confirm_password": MessageLookupByLibrary.simpleMessage(
-      "تأكيد كلمة المرور",
-    ),
-    "enter_your_email": MessageLookupByLibrary.simpleMessage(
-      "أدخل بريدك الإلكتروني",
-    ),
-    "enter_your_new_password": MessageLookupByLibrary.simpleMessage(
-      "أدخل كلمة المرور الجديدة",
-    ),
-    "enter_your_password": MessageLookupByLibrary.simpleMessage(
-      "أدخل كلمة المرور الخاصة بك",
-    ),
-    "forgot_password": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
-    "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
-    "login_failed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
-    "login_successful": MessageLookupByLibrary.simpleMessage(
-      "تم تسجيل الدخول بنجاح",
-    ),
-    "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
-    "no_contacts_found": MessageLookupByLibrary.simpleMessage(
-      "لم يتم العثور على جهات اتصال",
-    ),
-    "password_changed_successfully": MessageLookupByLibrary.simpleMessage(
-      "تم تغيير كلمة المرور بنجاح",
-    ),
-    "password_must_be_at_least_6_characters":
-        MessageLookupByLibrary.simpleMessage(
-          "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل",
-        ),
-    "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
-      "كلمات المرور غير متطابقة",
-    ),
-    "please_confirm_your_new_password": MessageLookupByLibrary.simpleMessage(
-      "يرجى تأكيد كلمة المرور الجديدة",
-    ),
-    "please_enter_a_valid_email": MessageLookupByLibrary.simpleMessage(
-      "يرجى إدخال بريد إلكتروني صالح",
-    ),
-    "please_enter_your_email": MessageLookupByLibrary.simpleMessage(
-      "يرجى إدخال بريدك الإلكتروني",
-    ),
-    "please_enter_your_new_password": MessageLookupByLibrary.simpleMessage(
-      "يرجى إدخال كلمة المرور الجديدة",
-    ),
-    "please_enter_your_password": MessageLookupByLibrary.simpleMessage(
-      "يرجى إدخال كلمة المرور الخاصة بك",
-    ),
-    "reset_password": MessageLookupByLibrary.simpleMessage(
-      "إعادة تعيين كلمة المرور",
-    ),
-    "send": MessageLookupByLibrary.simpleMessage("إرسال"),
-    "send_done": MessageLookupByLibrary.simpleMessage("تم الإرسال"),
-    "send_message": MessageLookupByLibrary.simpleMessage("إرسال رسالة"),
-    "send_notification": MessageLookupByLibrary.simpleMessage("إرسال إشعار"),
-    "set_darkeness": MessageLookupByLibrary.simpleMessage("ضبط السطوع"),
-    "something_went_wrong": MessageLookupByLibrary.simpleMessage("حدث خطأ ما"),
-    "subtitle": MessageLookupByLibrary.simpleMessage("العنوان الفرعي"),
-    "support_chats": MessageLookupByLibrary.simpleMessage("دردشات الدعم"),
-    "support_team": MessageLookupByLibrary.simpleMessage("فريق الدعم"),
-    "title": MessageLookupByLibrary.simpleMessage("العنوان"),
-    "total_payment": MessageLookupByLibrary.simpleMessage("إجمالي الدفع"),
-    "view_profile": MessageLookupByLibrary.simpleMessage("عرض الملف الشخصي"),
-    "write_message": MessageLookupByLibrary.simpleMessage("اكتب رسالة"),
-    "you_can_drop_and_choose_from_the_menu":
-        MessageLookupByLibrary.simpleMessage(
-          "يمكنك السحب والاختيار من القائمة",
-        ),
-    "you_can_switch_on_and_off_the_button":
-        MessageLookupByLibrary.simpleMessage("يمكنك تشغيل وإيقاف الزر"),
-  };
+        "Typically_replies_within_5_minutes":
+            MessageLookupByLibrary.simpleMessage(
+                "عادةً ما يتم الرد خلال 5 دقائق"),
+        "about_us": MessageLookupByLibrary.simpleMessage("معلومات عنا"),
+        "account_info_updated_successfully":
+            MessageLookupByLibrary.simpleMessage(
+                "تم تحديث معلومات الحساب بنجاح"),
+        "admin": MessageLookupByLibrary.simpleMessage("المسؤول"),
+        "are_you_sure_you_want_to_leave_the_chat":
+            MessageLookupByLibrary.simpleMessage(
+                "هل أنت متأكد أنك تريد مغادرة الدردشة؟"),
+        "booking_reservations": MessageLookupByLibrary.simpleMessage("حجوزات"),
+        "change_account_info":
+            MessageLookupByLibrary.simpleMessage("تغيير معلومات الحساب"),
+        "change_password":
+            MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+        "chats": MessageLookupByLibrary.simpleMessage("الدردشات"),
+        "check_in": MessageLookupByLibrary.simpleMessage("تسجيل الوصول"),
+        "check_out": MessageLookupByLibrary.simpleMessage("تسجيل المغادرة"),
+        "choose_application_language":
+            MessageLookupByLibrary.simpleMessage("اختر لغة التطبيق"),
+        "complete_fields":
+            MessageLookupByLibrary.simpleMessage("يرجى إكمال الحقول"),
+        "confirm_password":
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "enter_your_email":
+            MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
+        "enter_your_name": MessageLookupByLibrary.simpleMessage("أدخل اسمك"),
+        "enter_your_new_password":
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور الجديدة"),
+        "enter_your_password":
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور الخاصة بك"),
+        "enter_your_phone_number":
+            MessageLookupByLibrary.simpleMessage("أدخل رقم هاتفك"),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
+        "guests": MessageLookupByLibrary.simpleMessage("الضيوف"),
+        "hotel_name": MessageLookupByLibrary.simpleMessage("اسم الفندق"),
+        "hotel_rating": MessageLookupByLibrary.simpleMessage("تقييم الفندق"),
+        "hotel_reservation_info":
+            MessageLookupByLibrary.simpleMessage("معلومات حجز الفندق"),
+        "image_not_available":
+            MessageLookupByLibrary.simpleMessage("الصورة غير متاحة"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "login_failed":
+            MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
+        "login_successful":
+            MessageLookupByLibrary.simpleMessage("تم تسجيل الدخول بنجاح"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "no_contacts_found": MessageLookupByLibrary.simpleMessage(
+            "لم يتم العثور على جهات اتصال"),
+        "password_changed_successfully":
+            MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
+        "password_must_be_at_least_6_characters":
+            MessageLookupByLibrary.simpleMessage(
+                "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل"),
+        "passwords_do_not_match":
+            MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
+        "payment_failed": MessageLookupByLibrary.simpleMessage("فشل الدفع"),
+        "payment_info": MessageLookupByLibrary.simpleMessage("معلومات الدفع"),
+        "payment_status": MessageLookupByLibrary.simpleMessage("حالة الدفع"),
+        "payment_successful":
+            MessageLookupByLibrary.simpleMessage("تم الدفع بنجاح"),
+        "please_confirm_your_new_password":
+            MessageLookupByLibrary.simpleMessage(
+                "يرجى تأكيد كلمة المرور الجديدة"),
+        "please_enter_a_valid_email": MessageLookupByLibrary.simpleMessage(
+            "يرجى إدخال بريد إلكتروني صالح"),
+        "please_enter_a_valid_phone_number":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال رقم هاتف صالح"),
+        "please_enter_your_email":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال بريدك الإلكتروني"),
+        "please_enter_your_name":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال اسمك"),
+        "please_enter_your_new_password": MessageLookupByLibrary.simpleMessage(
+            "يرجى إدخال كلمة المرور الجديدة"),
+        "please_enter_your_password": MessageLookupByLibrary.simpleMessage(
+            "يرجى إدخال كلمة المرور الخاصة بك"),
+        "please_enter_your_phone_number":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال رقم هاتفك"),
+        "reset_password":
+            MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
+        "select_image": MessageLookupByLibrary.simpleMessage("اختر صورة"),
+        "send": MessageLookupByLibrary.simpleMessage("إرسال"),
+        "send_done": MessageLookupByLibrary.simpleMessage("تم الإرسال"),
+        "send_message": MessageLookupByLibrary.simpleMessage("إرسال رسالة"),
+        "send_notification":
+            MessageLookupByLibrary.simpleMessage("إرسال إشعار"),
+        "set_darkeness": MessageLookupByLibrary.simpleMessage("ضبط السطوع"),
+        "something_went_wrong":
+            MessageLookupByLibrary.simpleMessage("حدث خطأ ما"),
+        "subtitle": MessageLookupByLibrary.simpleMessage("العنوان الفرعي"),
+        "support_chats": MessageLookupByLibrary.simpleMessage("دردشات الدعم"),
+        "support_team": MessageLookupByLibrary.simpleMessage("فريق الدعم"),
+        "title": MessageLookupByLibrary.simpleMessage("العنوان"),
+        "total_amount": MessageLookupByLibrary.simpleMessage("المبلغ الإجمالي"),
+        "total_payment": MessageLookupByLibrary.simpleMessage("إجمالي الدفع"),
+        "update_info": MessageLookupByLibrary.simpleMessage("تحديث المعلومات"),
+        "view_details": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
+        "view_profile":
+            MessageLookupByLibrary.simpleMessage("عرض الملف الشخصي"),
+        "write_message": MessageLookupByLibrary.simpleMessage("اكتب رسالة"),
+        "you_can_drop_and_choose_from_the_menu":
+            MessageLookupByLibrary.simpleMessage(
+                "يمكنك السحب والاختيار من القائمة"),
+        "you_can_switch_on_and_off_the_button":
+            MessageLookupByLibrary.simpleMessage("يمكنك تشغيل وإيقاف الزر")
+      };
 }

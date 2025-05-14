@@ -42,7 +42,7 @@ class _sendNotifactionsSendViewState extends State<SendNotifactionsSendView> {
   Future<void> getAccessToken() async {
     try {
       final serviceAccountJson =
-          await rootBundle.loadString('assets/admin.json');
+          await rootBundle.loadString('files/admin.json');
 
       final accountCredentials = ServiceAccountCredentials.fromJson(
         json.decode(serviceAccountJson),

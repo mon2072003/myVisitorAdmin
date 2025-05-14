@@ -22,100 +22,117 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "Typically_replies_within_5_minutes": MessageLookupByLibrary.simpleMessage(
-      "Typically replies within 5 minutes",
-    ),
-    "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
-    "admin": MessageLookupByLibrary.simpleMessage("Admin"),
-    "are_you_sure_you_want_to_leave_the_chat":
-        MessageLookupByLibrary.simpleMessage(
-          "Are you sure you want to leave the chat?",
-        ),
-    "booking_reservations": MessageLookupByLibrary.simpleMessage(
-      "Booking Reservations",
-    ),
-    "change_password": MessageLookupByLibrary.simpleMessage("Change Password"),
-    "chats": MessageLookupByLibrary.simpleMessage("Chats"),
-    "check_in": MessageLookupByLibrary.simpleMessage("Check In"),
-    "check_out": MessageLookupByLibrary.simpleMessage("Check Out"),
-    "choose_application_language": MessageLookupByLibrary.simpleMessage(
-      "Choose Application Language",
-    ),
-    "complete_fields": MessageLookupByLibrary.simpleMessage(
-      "Please complete all fields",
-    ),
-    "confirm_password": MessageLookupByLibrary.simpleMessage(
-      "Confirm Password",
-    ),
-    "enter_your_email": MessageLookupByLibrary.simpleMessage(
-      "Enter your email",
-    ),
-    "enter_your_new_password": MessageLookupByLibrary.simpleMessage(
-      "Enter your new password",
-    ),
-    "enter_your_password": MessageLookupByLibrary.simpleMessage(
-      "Enter your password",
-    ),
-    "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
-    "login": MessageLookupByLibrary.simpleMessage("Login"),
-    "login_failed": MessageLookupByLibrary.simpleMessage("Login failed"),
-    "login_successful": MessageLookupByLibrary.simpleMessage(
-      "Login successful",
-    ),
-    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
-    "no_contacts_found": MessageLookupByLibrary.simpleMessage(
-      "No contacts found",
-    ),
-    "password_changed_successfully": MessageLookupByLibrary.simpleMessage(
-      "Password changed successfully",
-    ),
-    "password_must_be_at_least_6_characters":
-        MessageLookupByLibrary.simpleMessage(
-          "Password must be at least 6 characters",
-        ),
-    "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
-      "Passwords do not match",
-    ),
-    "please_confirm_your_new_password": MessageLookupByLibrary.simpleMessage(
-      "Please confirm your new password",
-    ),
-    "please_enter_a_valid_email": MessageLookupByLibrary.simpleMessage(
-      "Please enter a valid email",
-    ),
-    "please_enter_your_email": MessageLookupByLibrary.simpleMessage(
-      "Please enter your email",
-    ),
-    "please_enter_your_new_password": MessageLookupByLibrary.simpleMessage(
-      "Please enter your new password",
-    ),
-    "please_enter_your_password": MessageLookupByLibrary.simpleMessage(
-      "Please enter your password",
-    ),
-    "reset_password": MessageLookupByLibrary.simpleMessage("Reset Password"),
-    "send": MessageLookupByLibrary.simpleMessage("Send"),
-    "send_done": MessageLookupByLibrary.simpleMessage("Send Done"),
-    "send_message": MessageLookupByLibrary.simpleMessage("Send Message"),
-    "send_notification": MessageLookupByLibrary.simpleMessage(
-      "Send Notification",
-    ),
-    "set_darkeness": MessageLookupByLibrary.simpleMessage("Set Darkness"),
-    "something_went_wrong": MessageLookupByLibrary.simpleMessage(
-      "Something went wrong",
-    ),
-    "subtitle": MessageLookupByLibrary.simpleMessage("Subtitle"),
-    "support_chats": MessageLookupByLibrary.simpleMessage("Support Chats"),
-    "support_team": MessageLookupByLibrary.simpleMessage("Support Team"),
-    "title": MessageLookupByLibrary.simpleMessage("Title"),
-    "total_payment": MessageLookupByLibrary.simpleMessage("Total Payment"),
-    "view_profile": MessageLookupByLibrary.simpleMessage("View Profile"),
-    "write_message": MessageLookupByLibrary.simpleMessage("Write a message"),
-    "you_can_drop_and_choose_from_the_menu":
-        MessageLookupByLibrary.simpleMessage(
-          "You can drop and choose from the menu",
-        ),
-    "you_can_switch_on_and_off_the_button":
-        MessageLookupByLibrary.simpleMessage(
-          "You can switch on and off the button",
-        ),
-  };
+        "Typically_replies_within_5_minutes":
+            MessageLookupByLibrary.simpleMessage(
+                "Typically replies within 5 minutes"),
+        "about_us": MessageLookupByLibrary.simpleMessage("About Us"),
+        "account_info_updated_successfully":
+            MessageLookupByLibrary.simpleMessage(
+                "Account info updated successfully"),
+        "admin": MessageLookupByLibrary.simpleMessage("Admin"),
+        "are_you_sure_you_want_to_leave_the_chat":
+            MessageLookupByLibrary.simpleMessage(
+                "Are you sure you want to leave the chat?"),
+        "booking_reservations":
+            MessageLookupByLibrary.simpleMessage("Booking Reservations"),
+        "change_account_info":
+            MessageLookupByLibrary.simpleMessage("Change Account Info"),
+        "change_password":
+            MessageLookupByLibrary.simpleMessage("Change Password"),
+        "chats": MessageLookupByLibrary.simpleMessage("Chats"),
+        "check_in": MessageLookupByLibrary.simpleMessage("Check In"),
+        "check_out": MessageLookupByLibrary.simpleMessage("Check Out"),
+        "choose_application_language":
+            MessageLookupByLibrary.simpleMessage("Choose Application Language"),
+        "complete_fields":
+            MessageLookupByLibrary.simpleMessage("Please complete all fields"),
+        "confirm_password":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "enter_your_email":
+            MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "enter_your_name":
+            MessageLookupByLibrary.simpleMessage("Enter your name"),
+        "enter_your_new_password":
+            MessageLookupByLibrary.simpleMessage("Enter your new password"),
+        "enter_your_password":
+            MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "enter_your_phone_number":
+            MessageLookupByLibrary.simpleMessage("Enter your phone number"),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "guests": MessageLookupByLibrary.simpleMessage("Guests"),
+        "hotel_name": MessageLookupByLibrary.simpleMessage("Hotel Name"),
+        "hotel_rating": MessageLookupByLibrary.simpleMessage("Hotel Rating"),
+        "hotel_reservation_info":
+            MessageLookupByLibrary.simpleMessage("Hotel Reservation Info"),
+        "image_not_available":
+            MessageLookupByLibrary.simpleMessage("Image not available"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_failed": MessageLookupByLibrary.simpleMessage("Login failed"),
+        "login_successful":
+            MessageLookupByLibrary.simpleMessage("Login successful"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "no_contacts_found":
+            MessageLookupByLibrary.simpleMessage("No contacts found"),
+        "password_changed_successfully": MessageLookupByLibrary.simpleMessage(
+            "Password changed successfully"),
+        "password_must_be_at_least_6_characters":
+            MessageLookupByLibrary.simpleMessage(
+                "Password must be at least 6 characters"),
+        "passwords_do_not_match":
+            MessageLookupByLibrary.simpleMessage("Passwords do not match"),
+        "payment_failed":
+            MessageLookupByLibrary.simpleMessage("Payment Failed"),
+        "payment_info": MessageLookupByLibrary.simpleMessage("Payment Info"),
+        "payment_status":
+            MessageLookupByLibrary.simpleMessage("Payment Status"),
+        "payment_successful":
+            MessageLookupByLibrary.simpleMessage("Payment Successful"),
+        "please_confirm_your_new_password":
+            MessageLookupByLibrary.simpleMessage(
+                "Please confirm your new password"),
+        "please_enter_a_valid_email":
+            MessageLookupByLibrary.simpleMessage("Please enter a valid email"),
+        "please_enter_a_valid_phone_number":
+            MessageLookupByLibrary.simpleMessage(
+                "Please enter a valid phone number"),
+        "please_enter_your_email":
+            MessageLookupByLibrary.simpleMessage("Please enter your email"),
+        "please_enter_your_name":
+            MessageLookupByLibrary.simpleMessage("Please enter your name"),
+        "please_enter_your_new_password": MessageLookupByLibrary.simpleMessage(
+            "Please enter your new password"),
+        "please_enter_your_password":
+            MessageLookupByLibrary.simpleMessage("Please enter your password"),
+        "please_enter_your_phone_number": MessageLookupByLibrary.simpleMessage(
+            "Please enter your phone number"),
+        "reset_password":
+            MessageLookupByLibrary.simpleMessage("Reset Password"),
+        "select_image": MessageLookupByLibrary.simpleMessage("Select Image"),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
+        "send_done": MessageLookupByLibrary.simpleMessage("Send Done"),
+        "send_message": MessageLookupByLibrary.simpleMessage("Send Message"),
+        "send_notification":
+            MessageLookupByLibrary.simpleMessage("Send Notification"),
+        "set_darkeness": MessageLookupByLibrary.simpleMessage("Set Darkness"),
+        "something_went_wrong":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "subtitle": MessageLookupByLibrary.simpleMessage("Subtitle"),
+        "support_chats": MessageLookupByLibrary.simpleMessage("Support Chats"),
+        "support_team": MessageLookupByLibrary.simpleMessage("Support Team"),
+        "title": MessageLookupByLibrary.simpleMessage("Title"),
+        "total_amount": MessageLookupByLibrary.simpleMessage("Total Amount"),
+        "total_payment": MessageLookupByLibrary.simpleMessage("Total Payment"),
+        "update_info": MessageLookupByLibrary.simpleMessage("Update Info"),
+        "view_details": MessageLookupByLibrary.simpleMessage("View Details"),
+        "view_profile": MessageLookupByLibrary.simpleMessage("View Profile"),
+        "write_message":
+            MessageLookupByLibrary.simpleMessage("Write a message"),
+        "you_can_drop_and_choose_from_the_menu":
+            MessageLookupByLibrary.simpleMessage(
+                "You can drop and choose from the menu"),
+        "you_can_switch_on_and_off_the_button":
+            MessageLookupByLibrary.simpleMessage(
+                "You can switch on and off the button")
+      };
 }

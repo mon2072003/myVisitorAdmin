@@ -18,20 +18,17 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(
-      _current != null,
-      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
-    );
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -44,10 +41,8 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(
-      instance != null,
-      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
-    );
+    assert(instance != null,
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -57,7 +52,12 @@ class S {
 
   /// `Login`
   String get login {
-    return Intl.message('Login', name: 'login', desc: '', args: []);
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Enter your email`
@@ -252,7 +252,12 @@ class S {
 
   /// `Chats`
   String get chats {
-    return Intl.message('Chats', name: 'chats', desc: '', args: []);
+    return Intl.message(
+      'Chats',
+      name: 'chats',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `No contacts found`
@@ -297,22 +302,42 @@ class S {
 
   /// `Title`
   String get title {
-    return Intl.message('Title', name: 'title', desc: '', args: []);
+    return Intl.message(
+      'Title',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Subtitle`
   String get subtitle {
-    return Intl.message('Subtitle', name: 'subtitle', desc: '', args: []);
+    return Intl.message(
+      'Subtitle',
+      name: 'subtitle',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Send`
   String get send {
-    return Intl.message('Send', name: 'send', desc: '', args: []);
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Send Done`
   String get send_done {
-    return Intl.message('Send Done', name: 'send_done', desc: '', args: []);
+    return Intl.message(
+      'Send Done',
+      name: 'send_done',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Please complete all fields`
@@ -367,7 +392,12 @@ class S {
 
   /// `Admin`
   String get admin {
-    return Intl.message('Admin', name: 'admin', desc: '', args: []);
+    return Intl.message(
+      'Admin',
+      name: 'admin',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Support Chats`
@@ -382,17 +412,32 @@ class S {
 
   /// `Logout`
   String get logout {
-    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Check In`
   String get check_in {
-    return Intl.message('Check In', name: 'check_in', desc: '', args: []);
+    return Intl.message(
+      'Check In',
+      name: 'check_in',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Check Out`
   String get check_out {
-    return Intl.message('Check Out', name: 'check_out', desc: '', args: []);
+    return Intl.message(
+      'Check Out',
+      name: 'check_out',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Total Payment`
@@ -447,7 +492,212 @@ class S {
 
   /// `About Us`
   String get about_us {
-    return Intl.message('About Us', name: 'about_us', desc: '', args: []);
+    return Intl.message(
+      'About Us',
+      name: 'about_us',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View Details`
+  String get view_details {
+    return Intl.message(
+      'View Details',
+      name: 'view_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hotel Reservation Info`
+  String get hotel_reservation_info {
+    return Intl.message(
+      'Hotel Reservation Info',
+      name: 'hotel_reservation_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Image not available`
+  String get image_not_available {
+    return Intl.message(
+      'Image not available',
+      name: 'image_not_available',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hotel Name`
+  String get hotel_name {
+    return Intl.message(
+      'Hotel Name',
+      name: 'hotel_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hotel Rating`
+  String get hotel_rating {
+    return Intl.message(
+      'Hotel Rating',
+      name: 'hotel_rating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Guests`
+  String get guests {
+    return Intl.message(
+      'Guests',
+      name: 'guests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Info`
+  String get payment_info {
+    return Intl.message(
+      'Payment Info',
+      name: 'payment_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Amount`
+  String get total_amount {
+    return Intl.message(
+      'Total Amount',
+      name: 'total_amount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Status`
+  String get payment_status {
+    return Intl.message(
+      'Payment Status',
+      name: 'payment_status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Successful`
+  String get payment_successful {
+    return Intl.message(
+      'Payment Successful',
+      name: 'payment_successful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Failed`
+  String get payment_failed {
+    return Intl.message(
+      'Payment Failed',
+      name: 'payment_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Account Info`
+  String get change_account_info {
+    return Intl.message(
+      'Change Account Info',
+      name: 'change_account_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get enter_your_name {
+    return Intl.message(
+      'Enter your name',
+      name: 'enter_your_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your name`
+  String get please_enter_your_name {
+    return Intl.message(
+      'Please enter your name',
+      name: 'please_enter_your_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your phone number`
+  String get enter_your_phone_number {
+    return Intl.message(
+      'Enter your phone number',
+      name: 'enter_your_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number`
+  String get please_enter_your_phone_number {
+    return Intl.message(
+      'Please enter your phone number',
+      name: 'please_enter_your_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get please_enter_a_valid_phone_number {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'please_enter_a_valid_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update Info`
+  String get update_info {
+    return Intl.message(
+      'Update Info',
+      name: 'update_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Image`
+  String get select_image {
+    return Intl.message(
+      'Select Image',
+      name: 'select_image',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account info updated successfully`
+  String get account_info_updated_successfully {
+    return Intl.message(
+      'Account info updated successfully',
+      name: 'account_info_updated_successfully',
+      desc: '',
+      args: [],
+    );
   }
 }
 
