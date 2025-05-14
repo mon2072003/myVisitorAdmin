@@ -5,6 +5,7 @@ import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
 import 'package:my_visitor_admin/model/contacts/contacts_model.dart';
 import 'package:my_visitor_admin/view-model/home/hotel_reservation_cubit/hotel_reservation_cubit.dart';
+import 'package:my_visitor_admin/view/home/settings/change-account-info/change_account_info_screen.dart';
 import 'package:my_visitor_admin/widgets/hotel_card.dart';
 
 class ContactInfo extends StatelessWidget {
@@ -19,6 +20,20 @@ class ContactInfo extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder:
+                            (context) =>
+                                ChangeAccountInfoScreen(contactModel: contacts),
+                      ),
+                    );
+                  },
+                  icon: Icon(Icons.edit, color: Colors.deepOrange),
+                ),
+              ],
               expandedHeight: 350,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.network(

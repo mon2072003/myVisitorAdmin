@@ -17,9 +17,9 @@ class ChangeAccountInfoScreen extends StatelessWidget {
   final AuthViewModel authViewModel = AuthViewModel();
   ContactsModel contactModel;
 
-  ChangeAccountInfoScreen({super.key,required this.contactModel}) {
-    nameController.text = contactModel.name??"not available";
-    phoneController.text = contactModel.phoneNumber??"not available";
+  ChangeAccountInfoScreen({super.key, required this.contactModel}) {
+    nameController.text = contactModel.name ?? "not available";
+    phoneController.text = contactModel.phoneNumber ?? "not available";
   }
 
   @override
@@ -113,10 +113,13 @@ class ChangeAccountInfoScreen extends StatelessWidget {
                       if (formKey.currentState!.validate()) {
                         await context.read<AccountCubit>().changeAccountInfo(
                           name: nameController.text,
-                          email: FirebaseAuth.instance.currentUser!.email!,
+                          email:
+                              contactModel.email == ""
+                                  ? FirebaseAuth.instance.currentUser!.email!
+                                  : contactModel.email!,
                           phoneNumber: phoneController.text,
                         );
-                        Navigator.of(context).pop();
+                        Navigator.of(context).pushNamedAndRemoveUntil("/home", (route) => false);
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(

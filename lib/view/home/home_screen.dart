@@ -4,6 +4,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_visitor_admin/constants.dart';
 import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/model/contacts/contacts_model.dart';
 import 'package:my_visitor_admin/services/contacts/contacts.dart';
@@ -12,6 +13,7 @@ import 'package:my_visitor_admin/view-model/home/navigator_cubit/navigator_cubit
 import 'package:my_visitor_admin/view/home/contacts/contact_info/contact_info.dart';
 import 'package:my_visitor_admin/view/home/contacts/contacts_screen.dart';
 import 'package:my_visitor_admin/view/home/settings/settings_screen.dart';
+import 'package:my_visitor_admin/widgets/search_contacts_delegate.dart';
 
 class HomeScreen extends StatelessWidget {
   AuthViewModel authViewModel = AuthViewModel();
@@ -150,6 +152,17 @@ class HomeScreen extends StatelessWidget {
             filterQuality: FilterQuality.high,
             ),
           centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search, color: Colors.deepOrange, size: 30),
+            onPressed: () {
+              showSearch(
+                context: context,
+                delegate: SearchContactsDelegate(contacts: contacts),
+              );
+            },
+          ),
+        ],
         ),
         bottomNavigationBar: BlocBuilder<NavigatorCubit, NavigatorStates>(
           builder: (context, state) {

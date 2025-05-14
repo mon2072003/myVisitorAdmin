@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_visitor_admin/constants.dart';
 import 'package:my_visitor_admin/view-model/home/contacts_cubit/contacts_cubit.dart';
 import 'package:my_visitor_admin/view/home/contacts/contact_info/contact_info.dart';
 
@@ -19,6 +20,7 @@ class ContactsScreen extends StatelessWidget {
                 child: CircularProgressIndicator(color: Colors.deepOrange),
               );
             }
+            contacts = state.contacts;
             return ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               itemCount: state.contacts.length,
