@@ -39,4 +39,20 @@ class ContactsAPI {
       profileImageUrl: 'assets/images/defualt_profile.png',
     );
   }
+
+  static Future<bool> isAdmin(String email) async {
+    final firestore = FirebaseFirestore.instance;
+    final usersCollection = firestore.collection('admins');
+    try {
+      final querySnapshot =
+          await usersCollection.where('email', isEqualTo: email).get();
+      if (querySnapshot.docs.isNotEmpty) {
+        final userData = querySnapshot.docs.first.data();
+        return userData['isAdmin'] ?? false;
+      }
+    } catch (e) {
+      debugPrint('Error checking if user is admin: $e');
+    }
+    return false;
+  }
 }

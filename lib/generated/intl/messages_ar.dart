@@ -124,6 +124,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "view_profile":
             MessageLookupByLibrary.simpleMessage("عرض الملف الشخصي"),
         "write_message": MessageLookupByLibrary.simpleMessage("اكتب رسالة"),
+        "you_are_not_admin":
+            MessageLookupByLibrary.simpleMessage("أنت لست مسؤولاً"),
         "you_can_drop_and_choose_from_the_menu":
             MessageLookupByLibrary.simpleMessage(
                 "يمكنك السحب والاختيار من القائمة"),

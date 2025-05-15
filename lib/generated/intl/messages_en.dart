@@ -128,6 +128,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "view_profile": MessageLookupByLibrary.simpleMessage("View Profile"),
         "write_message":
             MessageLookupByLibrary.simpleMessage("Write a message"),
+        "you_are_not_admin":
+            MessageLookupByLibrary.simpleMessage("You are not admin"),
         "you_can_drop_and_choose_from_the_menu":
             MessageLookupByLibrary.simpleMessage(
                 "You can drop and choose from the menu"),

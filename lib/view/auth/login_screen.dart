@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_visitor_admin/generated/l10n.dart';
+import 'package:my_visitor_admin/services/contacts/contacts.dart';
 import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/widgets/custom_text_field.dart';
 
@@ -70,8 +71,24 @@ class LoginScreen extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.deepOrange,
               ),
-              onPressed: (){
+              onPressed: ()async{
                 if (formKey.currentState!.validate()) {
+
+                  bool isAdmin = await ContactsAPI.isAdmin(emailController.text.trim());
+
+                  if(isAdmin==false){
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          S.of(context).you_are_not_admin,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                    return;
+                  }
+                                    
                   credintial = authViewModel.login(
                     emailController.text.trim(),
                     passwordController.text.trim(),

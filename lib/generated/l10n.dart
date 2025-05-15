@@ -699,6 +699,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You are not admin`
+  String get you_are_not_admin {
+    return Intl.message(
+      'You are not admin',
+      name: 'you_are_not_admin',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

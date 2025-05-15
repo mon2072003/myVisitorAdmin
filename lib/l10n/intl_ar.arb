@@ -64,6 +64,7 @@
     "please_enter_a_valid_phone_number": "يرجى إدخال رقم هاتف صالح",
     "update_info": "تحديث المعلومات",
     "select_image": "اختر صورة",
-    "account_info_updated_successfully": "تم تحديث معلومات الحساب بنجاح"
+    "account_info_updated_successfully": "تم تحديث معلومات الحساب بنجاح",
+    "you_are_not_admin": "أنت لست مسؤولاً"
 
 }

@@ -64,5 +64,6 @@
     "please_enter_a_valid_phone_number": "Please enter a valid phone number",
     "update_info": "Update Info",
     "select_image": "Select Image",
-    "account_info_updated_successfully": "Account info updated successfully"
+    "account_info_updated_successfully": "Account info updated successfully",
+    "you_are_not_admin": "You are not admin"
 }
