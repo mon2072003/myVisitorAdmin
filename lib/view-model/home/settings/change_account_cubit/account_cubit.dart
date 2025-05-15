@@ -15,7 +15,7 @@ class AccountCubit extends Cubit<AccountState> {
   static String? _imageLink;
   static String? get imageLink => _imageLink;
 
-   Future<void> changeAccountInfo({
+  Future<void> changeAccountInfo({
     required String name,
     required String email,
     required String phoneNumber,
@@ -31,24 +31,24 @@ class AccountCubit extends Cubit<AccountState> {
       "phoneNumber": phoneNumber,
       "profileImageUrl": imageUrl,
     });
-    emit(AccountUpadted(
-      localImage: _localImage,
-      imageLink: _imageLink,
-    ));
+    _imageLink = null;
+    _localImage = null;
+    emit(AccountInitial());
   }
 
-   Future<XFile?> selectImage() async {
+  Future<XFile?> selectImage() async {
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-    if (image == null) return null;
+    if (image == null) {
+      _localImage = null;
+      emit(AccountInitial());
+      return null;
+    }
     _localImage = image;
-    emit(AccountUpadted(
-      localImage: _localImage,
-      imageLink: _imageLink,
-    ));
+    emit(AccountUpadted(localImage: _localImage, imageLink: null));
     return _localImage;
   }
 
-   Future<void> uploadImage() async {
+  Future<void> uploadImage() async {
     try {
       final XFile? image = _localImage;
       if (image == null) return;
@@ -71,9 +71,6 @@ class AccountCubit extends Cubit<AccountState> {
         print("❌ خطأ: $e");
       }
     }
-    emit(AccountUpadted(
-      localImage: _localImage,
-      imageLink: _imageLink,
-    ));
+    emit(AccountUpadted(localImage: null, imageLink: _imageLink));
   }
 }

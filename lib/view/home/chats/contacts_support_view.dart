@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/model/messages/message_model.dart';
@@ -16,7 +17,11 @@ class ContactsSupportScreen extends StatelessWidget {
           final uniqueUsernames = <String>{};
           return snapshot.docs
               .map((doc) => MessageModel.fromJson(doc.data()))
-              .where((message) => uniqueUsernames.add(message.sender))
+              .where(
+                (message) =>
+                    uniqueUsernames.add(message.sender) &&
+                    message.sender != FirebaseAuth.instance.currentUser!.email,
+              )
               .toList();
         });
   }
@@ -80,10 +85,10 @@ class ContactsItem extends StatelessWidget {
               child: Icon(Icons.person_2_outlined),
             ),
             title: Text(
-              messageModel.userName,
+              messageModel.sender,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: (22),
+                fontSize: (15),
                 fontWeight: FontWeight.bold,
               ),
             ),
