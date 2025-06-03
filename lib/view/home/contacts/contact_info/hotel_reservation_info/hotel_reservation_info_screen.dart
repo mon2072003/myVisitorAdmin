@@ -47,7 +47,7 @@ class HotelReservationInfoScreen extends StatelessWidget {
               ),
             SizedBox(height: 16),
             _buildInfoRow(
-              icon: Icons.hotel,
+              icon: Icons.home,
               label: S.of(context).hotel_name,
               value: hotelReservationModel.hotel.name,
             ),
@@ -74,6 +74,12 @@ class HotelReservationInfoScreen extends StatelessWidget {
               icon: Icons.people,
               label: S.of(context).guests,
               value: '${hotelReservationModel.bookDetails.guest} ${S.of(context).guests}',
+            ),
+            SizedBox(height: 8),
+            _buildInfoRow(
+              icon: Icons.hotel,
+              label: S.of(context).rooms,
+              value: hotelReservationModel.bookDetails.noRooms.toString(),
             ),
             SizedBox(height: 16),
             Text(

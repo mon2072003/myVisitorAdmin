@@ -709,6 +709,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Rooms`
+  String get rooms {
+    return Intl.message(
+      'Rooms',
+      name: 'rooms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place Details`
+  String get place_details {
+    return Intl.message(
+      'Place Details',
+      name: 'place_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tourist Places`
+  String get tourist_places {
+    return Intl.message(
+      'Tourist Places',
+      name: 'tourist_places',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place name updated successfully`
+  String get place_name_updated_successfully {
+    return Intl.message(
+      'Place name updated successfully',
+      name: 'place_name_updated_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place description updated successfully`
+  String get place_description_updated_successfully {
+    return Intl.message(
+      'Place description updated successfully',
+      name: 'place_description_updated_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tourist place added successfully`
+  String get tourist_place_added_successfully {
+    return Intl.message(
+      'Tourist place added successfully',
+      name: 'tourist_place_added_successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

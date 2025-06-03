@@ -88,6 +88,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Payment Status"),
         "payment_successful":
             MessageLookupByLibrary.simpleMessage("Payment Successful"),
+        "place_description_updated_successfully":
+            MessageLookupByLibrary.simpleMessage(
+                "Place description updated successfully"),
+        "place_details": MessageLookupByLibrary.simpleMessage("Place Details"),
+        "place_name_updated_successfully": MessageLookupByLibrary.simpleMessage(
+            "Place name updated successfully"),
         "please_confirm_your_new_password":
             MessageLookupByLibrary.simpleMessage(
                 "Please confirm your new password"),
@@ -108,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please enter your phone number"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("Reset Password"),
+        "rooms": MessageLookupByLibrary.simpleMessage("Rooms"),
         "select_image": MessageLookupByLibrary.simpleMessage("Select Image"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "send_done": MessageLookupByLibrary.simpleMessage("Send Done"),
@@ -123,6 +130,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "total_amount": MessageLookupByLibrary.simpleMessage("Total Amount"),
         "total_payment": MessageLookupByLibrary.simpleMessage("Total Payment"),
+        "tourist_place_added_successfully":
+            MessageLookupByLibrary.simpleMessage(
+                "Tourist place added successfully"),
+        "tourist_places":
+            MessageLookupByLibrary.simpleMessage("Tourist Places"),
         "update_info": MessageLookupByLibrary.simpleMessage("Update Info"),
         "view_details": MessageLookupByLibrary.simpleMessage("View Details"),
         "view_profile": MessageLookupByLibrary.simpleMessage("View Profile"),

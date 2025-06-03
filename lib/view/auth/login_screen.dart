@@ -71,12 +71,13 @@ class LoginScreen extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.deepOrange,
               ),
-              onPressed: ()async{
+              onPressed: () async {
                 if (formKey.currentState!.validate()) {
+                  bool isAdmin = await ContactsAPI.isAdmin(
+                    emailController.text.trim(),
+                  );
 
-                  bool isAdmin = await ContactsAPI.isAdmin(emailController.text.trim());
-
-                  if(isAdmin==false){
+                  if (isAdmin == false) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
@@ -88,16 +89,16 @@ class LoginScreen extends StatelessWidget {
                     );
                     return;
                   }
-                                    
+
                   credintial = authViewModel.login(
                     emailController.text.trim(),
                     passwordController.text.trim(),
                   );
-        
+
                   credintial!.then((value) {
                     if (value.user == null) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                         SnackBar(
+                        SnackBar(
                           content: Text(
                             S.of(context).login_failed,
                             style: TextStyle(color: Colors.white),
@@ -107,7 +108,7 @@ class LoginScreen extends StatelessWidget {
                       );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
-                         SnackBar(
+                        SnackBar(
                           content: Text(
                             S.of(context).login_successful,
                             style: TextStyle(color: Colors.white),
@@ -130,13 +131,13 @@ class LoginScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Text(
+                Text(
                   S.of(context).forgot_password,
                   // style: TextStyle(color: Colors.black),
                 ),
                 TextButton(
                   onPressed: () {
-                  Navigator.pushNamed(context, '/forgot-password');
+                    Navigator.pushNamed(context, '/forgot-password');
                   },
                   child: Text(
                     S.of(context).change_password,

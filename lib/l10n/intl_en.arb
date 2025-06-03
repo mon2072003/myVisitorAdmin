@@ -65,5 +65,11 @@
     "update_info": "Update Info",
     "select_image": "Select Image",
     "account_info_updated_successfully": "Account info updated successfully",
-    "you_are_not_admin": "You are not admin"
+    "you_are_not_admin": "You are not admin",
+    "rooms": "Rooms",
+    "place_details": "Place Details",
+    "tourist_places": "Tourist Places",
+    "place_name_updated_successfully": "Place name updated successfully",
+    "place_description_updated_successfully": "Place description updated successfully",
+    "tourist_place_added_successfully":"Tourist place added successfully"
 }

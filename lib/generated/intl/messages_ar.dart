@@ -85,6 +85,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "payment_status": MessageLookupByLibrary.simpleMessage("حالة الدفع"),
         "payment_successful":
             MessageLookupByLibrary.simpleMessage("تم الدفع بنجاح"),
+        "place_description_updated_successfully":
+            MessageLookupByLibrary.simpleMessage("تم تحديث وصف المكان بنجاح"),
+        "place_details": MessageLookupByLibrary.simpleMessage("تفاصيل المكان"),
+        "place_name_updated_successfully":
+            MessageLookupByLibrary.simpleMessage("تم تحديث اسم المكان بنجاح"),
         "please_confirm_your_new_password":
             MessageLookupByLibrary.simpleMessage(
                 "يرجى تأكيد كلمة المرور الجديدة"),
@@ -104,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("يرجى إدخال رقم هاتفك"),
         "reset_password":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
+        "rooms": MessageLookupByLibrary.simpleMessage("الغرف"),
         "select_image": MessageLookupByLibrary.simpleMessage("اختر صورة"),
         "send": MessageLookupByLibrary.simpleMessage("إرسال"),
         "send_done": MessageLookupByLibrary.simpleMessage("تم الإرسال"),
@@ -119,6 +125,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "title": MessageLookupByLibrary.simpleMessage("العنوان"),
         "total_amount": MessageLookupByLibrary.simpleMessage("المبلغ الإجمالي"),
         "total_payment": MessageLookupByLibrary.simpleMessage("إجمالي الدفع"),
+        "tourist_place_added_successfully":
+            MessageLookupByLibrary.simpleMessage(
+                "تمت إضافة المعلم السياحي بنجاح"),
+        "tourist_places":
+            MessageLookupByLibrary.simpleMessage("المعالم السياحية"),
         "update_info": MessageLookupByLibrary.simpleMessage("تحديث المعلومات"),
         "view_details": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
         "view_profile":

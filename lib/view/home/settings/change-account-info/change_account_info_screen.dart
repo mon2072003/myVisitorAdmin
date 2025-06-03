@@ -118,8 +118,13 @@ class ChangeAccountInfoScreen extends StatelessWidget {
                                   ? FirebaseAuth.instance.currentUser!.email!
                                   : contactModel.email!,
                           phoneNumber: phoneController.text,
+                          imageUrl:
+                              contactModel.profileImageUrl ??
+                              "assets/images/defualt_profile.png",
                         );
-                        Navigator.of(context).pushNamedAndRemoveUntil("/home", (route) => false);
+                        Navigator.of(
+                          context,
+                        ).pushNamedAndRemoveUntil("/home", (route) => false);
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
