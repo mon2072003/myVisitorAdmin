@@ -1,21 +1,21 @@
-class PlaceModel {
+class CityModel {
   String? name;
   String? description;
   List<String>? touristPlaces;
 
-  PlaceModel({
+  CityModel({
     this.name,
     this.description,
     this.touristPlaces,
   });
 
-  factory PlaceModel.fromList(Map<String, dynamic> json) {
-    return PlaceModel(
+  factory CityModel.fromList(Map<String, dynamic> json) {
+    return CityModel(
       name: json['name'] as String?,
       description: json['description'] as String?,
-      touristPlaces: (json['tourist_places'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+      touristPlaces: (json['tourist_places'] != null)
+          ? List<String>.from(json['tourist_places'] as List)
+          : [],
     );
   }
 

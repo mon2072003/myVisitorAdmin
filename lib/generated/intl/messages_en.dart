@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "account_info_updated_successfully":
             MessageLookupByLibrary.simpleMessage(
                 "Account info updated successfully"),
+        "activities": MessageLookupByLibrary.simpleMessage("Activities"),
         "admin": MessageLookupByLibrary.simpleMessage("Admin"),
         "are_you_sure_you_want_to_leave_the_chat":
             MessageLookupByLibrary.simpleMessage(
@@ -44,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "check_out": MessageLookupByLibrary.simpleMessage("Check Out"),
         "choose_application_language":
             MessageLookupByLibrary.simpleMessage("Choose Application Language"),
+        "city_details": MessageLookupByLibrary.simpleMessage("City Details"),
         "complete_fields":
             MessageLookupByLibrary.simpleMessage("Please complete all fields"),
         "confirm_password":
@@ -72,8 +74,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_successful":
             MessageLookupByLibrary.simpleMessage("Login successful"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "no_activities_available":
+            MessageLookupByLibrary.simpleMessage("No activities found"),
         "no_contacts_found":
             MessageLookupByLibrary.simpleMessage("No contacts found"),
+        "no_description_available":
+            MessageLookupByLibrary.simpleMessage("No description available"),
         "password_changed_successfully": MessageLookupByLibrary.simpleMessage(
             "Password changed successfully"),
         "password_must_be_at_least_6_characters":
@@ -91,7 +97,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "place_description_updated_successfully":
             MessageLookupByLibrary.simpleMessage(
                 "Place description updated successfully"),
-        "place_details": MessageLookupByLibrary.simpleMessage("Place Details"),
         "place_name_updated_successfully": MessageLookupByLibrary.simpleMessage(
             "Place name updated successfully"),
         "please_confirm_your_new_password":
@@ -133,8 +138,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "tourist_place_added_successfully":
             MessageLookupByLibrary.simpleMessage(
                 "Tourist place added successfully"),
+        "tourist_place_deleted_successfully":
+            MessageLookupByLibrary.simpleMessage(
+                "Tourist place deleted successfully"),
         "tourist_places":
             MessageLookupByLibrary.simpleMessage("Tourist Places"),
+        "unKnown_activity":
+            MessageLookupByLibrary.simpleMessage("Unknown activity"),
         "update_info": MessageLookupByLibrary.simpleMessage("Update Info"),
         "view_details": MessageLookupByLibrary.simpleMessage("View Details"),
         "view_profile": MessageLookupByLibrary.simpleMessage("View Profile"),

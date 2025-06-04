@@ -720,11 +720,11 @@ class S {
     );
   }
 
-  /// `Place Details`
-  String get place_details {
+  /// `City Details`
+  String get city_details {
     return Intl.message(
-      'Place Details',
-      name: 'place_details',
+      'City Details',
+      name: 'city_details',
       desc: '',
       args: [],
     );
@@ -765,6 +765,56 @@ class S {
     return Intl.message(
       'Tourist place added successfully',
       name: 'tourist_place_added_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activities`
+  String get activities {
+    return Intl.message(
+      'Activities',
+      name: 'activities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No activities found`
+  String get no_activities_available {
+    return Intl.message(
+      'No activities found',
+      name: 'no_activities_available',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown activity`
+  String get unKnown_activity {
+    return Intl.message(
+      'Unknown activity',
+      name: 'unKnown_activity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No description available`
+  String get no_description_available {
+    return Intl.message(
+      'No description available',
+      name: 'no_description_available',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tourist place deleted successfully`
+  String get tourist_place_deleted_successfully {
+    return Intl.message(
+      'Tourist place deleted successfully',
+      name: 'tourist_place_deleted_successfully',
       desc: '',
       args: [],
     );

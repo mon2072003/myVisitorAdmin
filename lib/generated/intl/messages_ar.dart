@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "account_info_updated_successfully":
             MessageLookupByLibrary.simpleMessage(
                 "تم تحديث معلومات الحساب بنجاح"),
+        "activities": MessageLookupByLibrary.simpleMessage("الأنشطة"),
         "admin": MessageLookupByLibrary.simpleMessage("المسؤول"),
         "are_you_sure_you_want_to_leave_the_chat":
             MessageLookupByLibrary.simpleMessage(
@@ -43,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "check_out": MessageLookupByLibrary.simpleMessage("تسجيل المغادرة"),
         "choose_application_language":
             MessageLookupByLibrary.simpleMessage("اختر لغة التطبيق"),
+        "city_details": MessageLookupByLibrary.simpleMessage("تفاصيل المدينة"),
         "complete_fields":
             MessageLookupByLibrary.simpleMessage("يرجى إكمال الحقول"),
         "confirm_password":
@@ -71,8 +73,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_successful":
             MessageLookupByLibrary.simpleMessage("تم تسجيل الدخول بنجاح"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "no_activities_available":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على أنشطة"),
         "no_contacts_found": MessageLookupByLibrary.simpleMessage(
             "لم يتم العثور على جهات اتصال"),
+        "no_description_available":
+            MessageLookupByLibrary.simpleMessage("لا توجد وصف متاح"),
         "password_changed_successfully":
             MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
         "password_must_be_at_least_6_characters":
@@ -87,7 +93,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم الدفع بنجاح"),
         "place_description_updated_successfully":
             MessageLookupByLibrary.simpleMessage("تم تحديث وصف المكان بنجاح"),
-        "place_details": MessageLookupByLibrary.simpleMessage("تفاصيل المكان"),
         "place_name_updated_successfully":
             MessageLookupByLibrary.simpleMessage("تم تحديث اسم المكان بنجاح"),
         "please_confirm_your_new_password":
@@ -128,8 +133,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "tourist_place_added_successfully":
             MessageLookupByLibrary.simpleMessage(
                 "تمت إضافة المعلم السياحي بنجاح"),
+        "tourist_place_deleted_successfully":
+            MessageLookupByLibrary.simpleMessage("تم حذف المعلم السياحي بنجاح"),
         "tourist_places":
             MessageLookupByLibrary.simpleMessage("المعالم السياحية"),
+        "unKnown_activity":
+            MessageLookupByLibrary.simpleMessage("نشاط غير معروف"),
         "update_info": MessageLookupByLibrary.simpleMessage("تحديث المعلومات"),
         "view_details": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
         "view_profile":

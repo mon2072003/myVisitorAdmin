@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_visitor_admin/view-model/home/places_cubit/places_cubit.dart';
-import 'package:my_visitor_admin/view/home/places/place_details/place_details_screen.dart';
+import 'package:my_visitor_admin/view-model/home/cities_cubit/cities_cubit.dart';
+import 'package:my_visitor_admin/view/home/cities/city_details/city_details_screen.dart';
 
-class PlacesScreen extends StatelessWidget {
-  const PlacesScreen({super.key});
+class CitiesScreen extends StatelessWidget {
+  const CitiesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PlacesCubit(),
+      create: (context) => CitiesCubit(),
       child: Scaffold(
-        body: BlocBuilder<PlacesCubit, PlacesState>(
+        body: BlocBuilder<CitiesCubit, CitiesState>(
           builder: (context, state) {
-            if (state is PlacesInitial) {
-              context.read<PlacesCubit>().getPlaces();
+            if (state is CitiesInitial) {
+              context.read<CitiesCubit>().getPlaces();
               return const Center(child: CircularProgressIndicator(color: Colors.deepOrange,));
             }
             return ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              itemCount: state.places.length,
+              itemCount: state.cities.length,
               itemBuilder: (context, index) {
-                final place = state.places[index];
+                final place = state.cities[index];
                 return Card(
                   child: ListTile(
                     title: Text(place.name!,style: TextStyle(color: Colors.deepOrange,fontWeight: FontWeight.bold),),
@@ -34,7 +34,7 @@ class PlacesScreen extends StatelessWidget {
                     trailing: IconButton(
                       icon: const Icon(Icons.arrow_forward_ios, color: Colors.deepOrange),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceDetailsScreen(place: place)));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => CityDetailsScreen(city: place)));
                       },
                     ),
                   ),

@@ -67,10 +67,15 @@
     "account_info_updated_successfully": "تم تحديث معلومات الحساب بنجاح",
     "you_are_not_admin": "أنت لست مسؤولاً",
     "rooms": "الغرف",
-    "place_details": "تفاصيل المكان",
+    "city_details": "تفاصيل المدينة",
     "tourist_places": "المعالم السياحية",
     "place_name_updated_successfully": "تم تحديث اسم المكان بنجاح",
     "place_description_updated_successfully": "تم تحديث وصف المكان بنجاح",
-    "tourist_place_added_successfully": "تمت إضافة المعلم السياحي بنجاح"
+    "tourist_place_added_successfully": "تمت إضافة المعلم السياحي بنجاح",
+    "activities": "الأنشطة",
+    "no_activities_available": "لم يتم العثور على أنشطة",
+    "unKnown_activity": "نشاط غير معروف",
+    "no_description_available": "لا توجد وصف متاح",
+    "tourist_place_deleted_successfully": "تم حذف المعلم السياحي بنجاح"
 
 }

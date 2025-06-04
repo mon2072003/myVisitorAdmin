@@ -1,22 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:my_visitor_admin/generated/l10n.dart';
-import 'package:my_visitor_admin/model/places/places_model.dart';
-import 'package:my_visitor_admin/services/places/places.dart';
+import 'package:my_visitor_admin/model/cities/activities/activities_model.dart';
+import 'package:my_visitor_admin/model/cities/cities_model.dart';
+import 'package:my_visitor_admin/services/cities/activities/activities.dart';
+import 'package:my_visitor_admin/services/cities/cities.dart';
+import 'package:my_visitor_admin/view/home/cities/city_details/activities_screen/activities_screen.dart';
 
-class PlaceDetailsScreen extends StatelessWidget {
-  PlaceModel? place;
+class CityDetailsScreen extends StatefulWidget {
+  CityModel? city;
+
+  CityDetailsScreen({super.key, required this.city});
+
+  @override
+  State<CityDetailsScreen> createState() => _CityDetailsScreenState();
+}
+
+class _CityDetailsScreenState extends State<CityDetailsScreen> {
   final TextEditingController textController = TextEditingController();
-  PlaceDetailsScreen({super.key, required this.place});
+
+  @override
+  void dispose() {
+    textController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).place_details)),
+      appBar: AppBar(
+        title: Text(S.of(context).city_details),
+        actions: [
+          IconButton(
+            onPressed: () async {
+              List<ActivitiesModel> activities =
+                  await Activities.getActivitiesByCity(widget.city!.name!);
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder:
+                      (context) =>
+                          ActivitiesScreen(activitiesModel: activities),
+                ),
+              );
+            },
+            icon: Icon(Icons.more_vert, color: Colors.deepOrange),
+          ),
+        ],
+      ),
       body:
-          place == null
+          widget.city == null
               ? const Center(
                 child: Text(
-                  "No place data available.",
+                  "No city data available.",
                   style: TextStyle(fontSize: 20, color: Colors.deepOrange),
                 ),
               )
@@ -35,7 +69,7 @@ class PlaceDetailsScreen extends StatelessWidget {
                         const SizedBox(width: 10),
                         Expanded(
                           child: Text(
-                            place!.name ?? "No Name",
+                            widget.city!.name ?? "No Name",
                             style: const TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
@@ -54,8 +88,8 @@ class PlaceDetailsScreen extends StatelessWidget {
                               context: context,
                               controller: textController,
                               onPressed: (context) async {
-                                await Places.changePlaceName(
-                                  oldName: place!.name!,
+                                await Cities.changeCityName(
+                                  oldName: widget.city!.name!,
                                   newName: textController.text,
                                 );
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -109,7 +143,7 @@ class PlaceDetailsScreen extends StatelessWidget {
                           ),
                           Expanded(
                             child: Text(
-                              place!.description ?? "No Description available.",
+                              widget.city!.description ?? "No Description available.",
                               style: const TextStyle(fontSize: 18),
                             ),
                           ),
@@ -119,8 +153,8 @@ class PlaceDetailsScreen extends StatelessWidget {
                                 context: context,
                                 controller: textController,
                                 onPressed: (context) {
-                                  Places.changeDescription(
-                                    oldDescription: place!.description!,
+                                  Cities.changeDescription(
+                                    oldDescription: widget.city!.description!,
                                     newDescription: textController.text,
                                   );
                                   ScaffoldMessenger.of(context).showSnackBar(
@@ -169,8 +203,8 @@ class PlaceDetailsScreen extends StatelessWidget {
                               context: context,
                               controller: textController,
                               onPressed: (context) async {
-                                await Places.addTouristPlaces(
-                                  touristPlaces: place!.touristPlaces!,
+                                await Cities.addTouristPlaces(
+                                  touristPlaces: widget.city!.touristPlaces!,
                                   newTouristPlace: textController.text,
                                 );
                                 ScaffoldMessenger.of(context).showSnackBar(
@@ -204,7 +238,7 @@ class PlaceDetailsScreen extends StatelessWidget {
                     ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: place!.touristPlaces?.length ?? 0,
+                      itemCount: widget.city!.touristPlaces?.length ?? 0,
                       itemBuilder: (context, index) {
                         return Card(
                           child: ListTile(
@@ -219,7 +253,37 @@ class PlaceDetailsScreen extends StatelessWidget {
                               ),
                             ),
                             title: Text(
-                              place!.touristPlaces?[index] ?? "No Name",
+                              widget.city!.touristPlaces?[index] ?? "No Name",
+                            ),
+                            trailing: IconButton(
+                              onPressed: () async {
+                                await Cities.deleteTouristPlace(
+                                  touristPlace:
+                                      widget.city!.touristPlaces?[index] ?? "",
+                                );
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      S
+                                          .of(context)
+                                          .tourist_place_deleted_successfully,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    backgroundColor: Colors.green,
+                                  ),
+                                );
+                                Navigator.of(context).pushNamedAndRemoveUntil(
+                                  "/home",
+                                  (route) => false,
+                                );
+                              },
+                              icon: Icon(
+                                Icons.delete,
+                                color: Colors.deepOrange,
+                                size: 20,
+                              ),
                             ),
                           ),
                         );

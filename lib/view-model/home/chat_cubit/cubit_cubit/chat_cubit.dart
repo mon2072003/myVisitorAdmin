@@ -1,8 +1,5 @@
-import 'package:bloc/bloc.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
-import 'package:meta/meta.dart';
 import 'package:my_visitor_admin/model/messages/message_model.dart';
 import 'package:my_visitor_admin/services/errors/firebase_err.dart';
 
@@ -26,22 +23,20 @@ class ChatCubit extends Cubit<ChatState> {
 
       emit(ChatSuccess());
     } catch (e) {
-      emit(ChatFailure(
-          errMessage: FirebaseFailure.fromFirebaseException(e as Exception)
-              .errMessage
-              .toString()));
+      emit(
+        ChatFailure(
+          errMessage:
+              FirebaseFailure.fromFirebaseException(
+                e as Exception,
+              ).errMessage.toString(),
+        ),
+      );
     }
   }
 
   void getMessages() {
     List<MessageModel> messagesList = [];
-    messages
-        .orderBy(
-          'createdAt',
-          descending: true,
-        )
-        .snapshots()
-        .listen((event) {
+    messages.orderBy('createdAt', descending: true).snapshots().listen((event) {
       for (var doc in event.docs) {
         messagesList.add(MessageModel.fromJson(doc));
       }

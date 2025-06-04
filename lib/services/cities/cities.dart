@@ -1,17 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:my_visitor_admin/model/places/places_model.dart';
+import 'package:my_visitor_admin/model/cities/cities_model.dart';
 
-class Places {
-  List<PlaceModel> places = [];
-  Future<List<PlaceModel>> getPlaces() async {
+class Cities {
+  List<CityModel> places = [];
+  Future<List<CityModel>> getCities() async {
     final firestore = FirebaseFirestore.instance;
     final placesCollection = firestore.collection('egy_data');
     try {
       final querySnapshot = await placesCollection.get();
       places =
           querySnapshot.docs
-              .map((doc) => PlaceModel.fromList(doc.data()))
+              .map((doc) => CityModel.fromList(doc.data()))
               .toList();
     } catch (e) {
       debugPrint('Error fetching places: $e');
@@ -19,7 +19,7 @@ class Places {
     return places;
   }
 
-  static Future<void> changePlaceName({
+  static Future<void> changeCityName({
     required String oldName,
     required String newName,
   }) async {
@@ -84,6 +84,33 @@ class Places {
                 })
                 .catchError((error) {
                   debugPrint('Error adding tourist place: $error');
+                });
+          }
+        })
+        .catchError((error) {
+          debugPrint('Error fetching tourist places: $error');
+        });
+  }
+
+  static Future<void> deleteTouristPlace({required String touristPlace}) async {
+    final firestore = FirebaseFirestore.instance;
+    final placesCollection = firestore.collection('egy_data');
+    placesCollection
+        .where("tourist_places", arrayContains: touristPlace)
+        .get()
+        .then((snapshot) {
+          for (var doc in snapshot.docs) {
+            List<String> updatedTouristPlaces = List.from(
+              doc.data()['tourist_places'],
+            );
+            updatedTouristPlaces.remove(touristPlace);
+            doc.reference
+                .update({'tourist_places': updatedTouristPlaces})
+                .then((_) {
+                  debugPrint('Tourist place deleted successfully');
+                })
+                .catchError((error) {
+                  debugPrint('Error deleting tourist place: $error');
                 });
           }
         })

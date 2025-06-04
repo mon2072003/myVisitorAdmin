@@ -12,13 +12,13 @@ import 'package:my_visitor_admin/view-model/auth/auth_view_model.dart';
 import 'package:my_visitor_admin/view-model/home/navigator_cubit/navigator_cubit.dart';
 import 'package:my_visitor_admin/view/home/contacts/contact_info/contact_info.dart';
 import 'package:my_visitor_admin/view/home/contacts/contacts_screen.dart';
-import 'package:my_visitor_admin/view/home/places/places_screen.dart';
+import 'package:my_visitor_admin/view/home/cities/cities_screen.dart';
 import 'package:my_visitor_admin/view/home/settings/settings_screen.dart';
 import 'package:my_visitor_admin/widgets/search_contacts_delegate.dart';
 
 class HomeScreen extends StatelessWidget {
   AuthViewModel authViewModel = AuthViewModel();
-  List<Widget> screens = [ContactsScreen(),PlacesScreen(), SettingsScreen()];
+  List<Widget> screens = [ContactsScreen(),CitiesScreen(), SettingsScreen()];
   HomeScreen({super.key});
 
   @override

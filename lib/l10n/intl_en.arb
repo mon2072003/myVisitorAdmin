@@ -67,9 +67,14 @@
     "account_info_updated_successfully": "Account info updated successfully",
     "you_are_not_admin": "You are not admin",
     "rooms": "Rooms",
-    "place_details": "Place Details",
+    "city_details": "City Details",
     "tourist_places": "Tourist Places",
     "place_name_updated_successfully": "Place name updated successfully",
     "place_description_updated_successfully": "Place description updated successfully",
-    "tourist_place_added_successfully":"Tourist place added successfully"
+    "tourist_place_added_successfully": "Tourist place added successfully",
+    "activities": "Activities",
+    "no_activities_available": "No activities found",
+    "unKnown_activity": "Unknown activity",
+    "no_description_available": "No description available",
+    "tourist_place_deleted_successfully": "Tourist place deleted successfully"
 }
