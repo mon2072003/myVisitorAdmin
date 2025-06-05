@@ -3,14 +3,9 @@ import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/model/cities/activities/activities_model.dart';
 import 'package:my_visitor_admin/view/home/cities/city_details/city_details_screen.dart';
 
-// Assume you have these utilities available
-// import 'package:my_visitor_admin/utils/custom_bottom_sheet.dart';
-// import 'package:my_visitor_admin/generated/l10n.dart';
-// import 'package:my_visitor_admin/controller/cities.dart';
 
 class ActivityDetailsScreen extends StatefulWidget {
   final ActivitiesModel? activity;
-
   const ActivityDetailsScreen({super.key, required this.activity});
 
   @override

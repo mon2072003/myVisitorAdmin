@@ -141,7 +141,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 keyboardType: TextInputType.multiline,
-                maxLines: null,
+                maxLines: 3,
                 controller: textController,
                 style: TextStyle(color: Colors.black),
                 onSubmitted: (_) => sendMessage(),
