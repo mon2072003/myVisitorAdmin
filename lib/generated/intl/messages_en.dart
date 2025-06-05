@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Account info updated successfully"),
         "activities": MessageLookupByLibrary.simpleMessage("Activities"),
+        "add_a_new_city":
+            MessageLookupByLibrary.simpleMessage("Add a new city"),
         "admin": MessageLookupByLibrary.simpleMessage("Admin"),
         "are_you_sure_you_want_to_leave_the_chat":
             MessageLookupByLibrary.simpleMessage(
@@ -45,11 +47,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "check_out": MessageLookupByLibrary.simpleMessage("Check Out"),
         "choose_application_language":
             MessageLookupByLibrary.simpleMessage("Choose Application Language"),
+        "city_added_successfully":
+            MessageLookupByLibrary.simpleMessage("City added successfully"),
         "city_details": MessageLookupByLibrary.simpleMessage("City Details"),
         "complete_fields":
             MessageLookupByLibrary.simpleMessage("Please complete all fields"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "enter_city_description":
+            MessageLookupByLibrary.simpleMessage("Enter city description"),
+        "enter_city_name":
+            MessageLookupByLibrary.simpleMessage("Enter city name"),
         "enter_your_email":
             MessageLookupByLibrary.simpleMessage("Enter your email"),
         "enter_your_name":
@@ -107,6 +115,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "please_enter_a_valid_phone_number":
             MessageLookupByLibrary.simpleMessage(
                 "Please enter a valid phone number"),
+        "please_enter_city_description": MessageLookupByLibrary.simpleMessage(
+            "Please enter city description"),
+        "please_enter_city_name":
+            MessageLookupByLibrary.simpleMessage("Please enter city name"),
         "please_enter_your_email":
             MessageLookupByLibrary.simpleMessage("Please enter your email"),
         "please_enter_your_name":

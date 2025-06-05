@@ -45,6 +45,7 @@ class CitiesScreen extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
+            Navigator.pushNamed(context,"/add-new-city");
           },
           backgroundColor: Colors.deepOrange,
           child: const Icon(Icons.add),

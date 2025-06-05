@@ -118,4 +118,21 @@ class Cities {
           debugPrint('Error fetching tourist places: $error');
         });
   }
+
+  static Future<void> addCity({
+    required String name,
+    required String description,
+  }) async {
+    final firestore = FirebaseFirestore.instance;
+    final placesCollection = firestore.collection('egy_data');
+    await placesCollection.doc(name).set({
+      'name': name,
+      'description': description,
+      'tourist_places': [],
+    }).then((_) {
+      debugPrint('City added successfully');
+    }).catchError((error) {
+      debugPrint('Error adding city: $error');
+    });
+  }
 }

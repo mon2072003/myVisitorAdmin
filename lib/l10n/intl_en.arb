@@ -76,5 +76,11 @@
     "no_activities_available": "No activities found",
     "unKnown_activity": "Unknown activity",
     "no_description_available": "No description available",
-    "tourist_place_deleted_successfully": "Tourist place deleted successfully"
+    "tourist_place_deleted_successfully": "Tourist place deleted successfully",
+    "add_a_new_city": "Add a new city",
+    "enter_city_name": "Enter city name",
+    "enter_city_description": "Enter city description",
+    "please_enter_city_name": "Please enter city name",
+    "please_enter_city_description": "Please enter city description",
+    "city_added_successfully": "City added successfully"
 }

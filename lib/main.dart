@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/view-model/home/settings/app-cubit/app_cubit.dart';
+import 'package:my_visitor_admin/view/home/cities/add_new_city/add_new_city.dart';
 import 'package:my_visitor_admin/view/home/settings/change-password/change_password_screen.dart';
 import 'package:my_visitor_admin/view/home/about-us/about_us_screen.dart';
 import 'package:my_visitor_admin/view/home/chats/chat_view.dart';
@@ -91,6 +92,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   '/SendNotifactionsSendView': (context) => SendNotifactionsSendView(),
   '/change-password': (context) => ChangePasswordScreen(),
   '/about-us': (context) => AboutUsScreen(),
+  '/add-new-city' : (context)=> AddNewCityScreen()
 };
 
 Future<void> setupHive() async {

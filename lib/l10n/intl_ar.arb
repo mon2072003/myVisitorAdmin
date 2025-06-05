@@ -76,6 +76,12 @@
     "no_activities_available": "لم يتم العثور على أنشطة",
     "unKnown_activity": "نشاط غير معروف",
     "no_description_available": "لا توجد وصف متاح",
-    "tourist_place_deleted_successfully": "تم حذف المعلم السياحي بنجاح"
+    "tourist_place_deleted_successfully": "تم حذف المعلم السياحي بنجاح",
+    "add_a_new_city": "إضافة مدينة جديدة",
+    "enter_city_name": "أدخل اسم المدينة",
+    "enter_city_description": "أدخل وصف المدينة",
+    "please_enter_city_name": "يرجى إدخال اسم المدينة",
+    "please_enter_city_description": "يرجى إدخال وصف المدينة",
+    "city_added_successfully": "تمت إضافة المدينة بنجاح"
 
 }

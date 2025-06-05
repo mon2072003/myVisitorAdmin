@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "تم تحديث معلومات الحساب بنجاح"),
         "activities": MessageLookupByLibrary.simpleMessage("الأنشطة"),
+        "add_a_new_city":
+            MessageLookupByLibrary.simpleMessage("إضافة مدينة جديدة"),
         "admin": MessageLookupByLibrary.simpleMessage("المسؤول"),
         "are_you_sure_you_want_to_leave_the_chat":
             MessageLookupByLibrary.simpleMessage(
@@ -44,11 +46,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "check_out": MessageLookupByLibrary.simpleMessage("تسجيل المغادرة"),
         "choose_application_language":
             MessageLookupByLibrary.simpleMessage("اختر لغة التطبيق"),
+        "city_added_successfully":
+            MessageLookupByLibrary.simpleMessage("تمت إضافة المدينة بنجاح"),
         "city_details": MessageLookupByLibrary.simpleMessage("تفاصيل المدينة"),
         "complete_fields":
             MessageLookupByLibrary.simpleMessage("يرجى إكمال الحقول"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "enter_city_description":
+            MessageLookupByLibrary.simpleMessage("أدخل وصف المدينة"),
+        "enter_city_name":
+            MessageLookupByLibrary.simpleMessage("أدخل اسم المدينة"),
         "enter_your_email":
             MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
         "enter_your_name": MessageLookupByLibrary.simpleMessage("أدخل اسمك"),
@@ -102,6 +110,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "يرجى إدخال بريد إلكتروني صالح"),
         "please_enter_a_valid_phone_number":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال رقم هاتف صالح"),
+        "please_enter_city_description":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال وصف المدينة"),
+        "please_enter_city_name":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال اسم المدينة"),
         "please_enter_your_email":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال بريدك الإلكتروني"),
         "please_enter_your_name":

@@ -819,6 +819,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Add a new city`
+  String get add_a_new_city {
+    return Intl.message(
+      'Add a new city',
+      name: 'add_a_new_city',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter city name`
+  String get enter_city_name {
+    return Intl.message(
+      'Enter city name',
+      name: 'enter_city_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter city description`
+  String get enter_city_description {
+    return Intl.message(
+      'Enter city description',
+      name: 'enter_city_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter city name`
+  String get please_enter_city_name {
+    return Intl.message(
+      'Please enter city name',
+      name: 'please_enter_city_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter city description`
+  String get please_enter_city_description {
+    return Intl.message(
+      'Please enter city description',
+      name: 'please_enter_city_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City added successfully`
+  String get city_added_successfully {
+    return Intl.message(
+      'City added successfully',
+      name: 'city_added_successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
