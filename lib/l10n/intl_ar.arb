@@ -82,6 +82,31 @@
     "enter_city_description": "أدخل وصف المدينة",
     "please_enter_city_name": "يرجى إدخال اسم المدينة",
     "please_enter_city_description": "يرجى إدخال وصف المدينة",
-    "city_added_successfully": "تمت إضافة المدينة بنجاح"
+    "city_added_successfully": "تمت إضافة المدينة بنجاح",
+    "delete_city": "حذف المدينة",
+    "activity_details": "تفاصيل النشاط",
+    "no_activities_found": "لم يتم العثور على أنشطة",
+    "no_title_available": "لا يوجد عنوان متاح",
+    "description": "الوصف",
+    "title_updated_successfully": "تم تحديث العنوان بنجاح",
+    "add_new_activity": "إضافة نشاط جديد",
+    "enter_activity_name": "أدخل اسم النشاط",
+    "enter_activity_description": "أدخل وصف النشاط",
+    "please_enter_activity_name": "يرجى إدخال اسم النشاط",
+    "please_enter_activity_description": "يرجى إدخال وصف النشاط",
+    "activity_added_successfully": "تمت إضافة النشاط بنجاح",
+    "field_required": "هذا الحقل مطلوب",
+    "image_url": "رابط الصورة",
+    "add_image_url": "إضافة رابط الصورة",
+    "latitude": "خط العرض",
+    "longitude": "خط الطول",
+    "invalid_latitude": "خط العرض غير صالح",
+    "invalid_longitude": "خط الطول غير صالح",
+    "delete_activity": "حذف النشاط",
+    "are_you_sure_you_want_to_delete_this_activity": "هل أنت متأكد أنك تريد حذف هذا النشاط؟",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "activity_deleted_successfully": "تم حذف النشاط بنجاح"
+
 
 }

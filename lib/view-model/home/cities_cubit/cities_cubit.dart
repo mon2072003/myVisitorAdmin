@@ -12,4 +12,8 @@ class CitiesCubit extends Cubit<CitiesState> {
     cities = await citiesService.getCities();
     emit(CitiesLoaded(cities: cities));
   }
+  void deleteCity(String cityName) async {
+    await citiesService.deleteCity(name: cityName);
+    getPlaces();
+  }
 }

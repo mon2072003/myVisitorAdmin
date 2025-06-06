@@ -879,6 +879,246 @@ class S {
       args: [],
     );
   }
+
+  /// `Delete City`
+  String get delete_city {
+    return Intl.message(
+      'Delete City',
+      name: 'delete_city',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity Details`
+  String get activity_details {
+    return Intl.message(
+      'Activity Details',
+      name: 'activity_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No activities found`
+  String get no_activities_found {
+    return Intl.message(
+      'No activities found',
+      name: 'no_activities_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No title available`
+  String get no_title_available {
+    return Intl.message(
+      'No title available',
+      name: 'no_title_available',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title updated successfully`
+  String get title_updated_successfully {
+    return Intl.message(
+      'Title updated successfully',
+      name: 'title_updated_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Activity`
+  String get add_new_activity {
+    return Intl.message(
+      'Add New Activity',
+      name: 'add_new_activity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter activity name`
+  String get enter_activity_name {
+    return Intl.message(
+      'Enter activity name',
+      name: 'enter_activity_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter activity description`
+  String get enter_activity_description {
+    return Intl.message(
+      'Enter activity description',
+      name: 'enter_activity_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter activity name`
+  String get please_enter_activity_name {
+    return Intl.message(
+      'Please enter activity name',
+      name: 'please_enter_activity_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter activity description`
+  String get please_enter_activity_description {
+    return Intl.message(
+      'Please enter activity description',
+      name: 'please_enter_activity_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity added successfully`
+  String get activity_added_successfully {
+    return Intl.message(
+      'Activity added successfully',
+      name: 'activity_added_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get field_required {
+    return Intl.message(
+      'This field is required',
+      name: 'field_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Image URL`
+  String get image_url {
+    return Intl.message(
+      'Image URL',
+      name: 'image_url',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Image URL`
+  String get add_image_url {
+    return Intl.message(
+      'Add Image URL',
+      name: 'add_image_url',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latitude`
+  String get latitude {
+    return Intl.message(
+      'Latitude',
+      name: 'latitude',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Longitude`
+  String get longitude {
+    return Intl.message(
+      'Longitude',
+      name: 'longitude',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid latitude`
+  String get invalid_latitude {
+    return Intl.message(
+      'Invalid latitude',
+      name: 'invalid_latitude',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid longitude`
+  String get invalid_longitude {
+    return Intl.message(
+      'Invalid longitude',
+      name: 'invalid_longitude',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Activity`
+  String get delete_activity {
+    return Intl.message(
+      'Delete Activity',
+      name: 'delete_activity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this activity?`
+  String get are_you_sure_you_want_to_delete_this_activity {
+    return Intl.message(
+      'Are you sure you want to delete this activity?',
+      name: 'are_you_sure_you_want_to_delete_this_activity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity deleted successfully`
+  String get activity_deleted_successfully {
+    return Intl.message(
+      'Activity deleted successfully',
+      name: 'activity_deleted_successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

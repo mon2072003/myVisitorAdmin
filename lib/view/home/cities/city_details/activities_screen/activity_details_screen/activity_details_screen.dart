@@ -3,11 +3,13 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/model/cities/activities/activities_model.dart';
+import 'package:my_visitor_admin/services/cities/activities/activities.dart';
 import 'package:my_visitor_admin/view/home/cities/city_details/city_details_screen.dart';
 
 class ActivityDetailsScreen extends StatefulWidget {
   final ActivitiesModel? activity;
-  const ActivityDetailsScreen({super.key, required this.activity});
+  final String? cityName;
+  const ActivityDetailsScreen({super.key, required this.activity, required this.cityName});
 
   @override
   State<ActivityDetailsScreen> createState() => _ActivityDetailsScreenState();
@@ -36,14 +38,14 @@ class _ActivityDetailsScreenState extends State<ActivityDetailsScreen> {
     final activity = widget.activity;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Activity Details'),
+        title:  Text(S.of(context).activity_details),
         centerTitle: true,
         elevation: 2,
       ),
       body: activity == null
-          ? const Center(
+          ?  Center(
             child: Text(
-              'No activity data available.',
+              S.of(context).no_activities_found,
               style: TextStyle(fontSize: 18),
             ),
           )
@@ -52,11 +54,56 @@ class _ActivityDetailsScreenState extends State<ActivityDetailsScreen> {
             child: ListView(
               children: [
                 // Title
-                Text(
-                  activity.title ?? 'No Title',
-                  style: Theme.of(context).textTheme.headlineMedium
+                Row(
+                  children: [
+                  Expanded(
+                    child: Text(
+                    activity.title ?? S.of(context).no_title_available,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.headlineMedium
                       ?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () async {
+                    final titleController = TextEditingController(
+                      text: activity.title ?? '',
+                    );
+                    await customBottomSheet(
+                      context: context,
+                      controller: titleController,
+                      onPressed: (context) async{
+                      // Update the title here
+                      await Activities.updateTitle(
+                        city: widget.cityName!,
+                        oldTitle: activity.title!,
+                        newTitle: titleController.text,
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                        content: Text(
+                          S.of(context).title_updated_successfully,
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        backgroundColor: Colors.green,
+                        ),
+                      );
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                        "/home",
+                        (route) => false,
+                      );
+                      },
+                    );
+                    },
+                    icon: const Icon(
+                    Icons.edit,
+                    color: Colors.deepOrange,
+                    ),
+                  ),
+                  ],
                 ),
+                
                 const SizedBox(height: 20),
                 // Images
                 if (activity.images != null && activity.images!.isNotEmpty)
@@ -102,7 +149,7 @@ class _ActivityDetailsScreenState extends State<ActivityDetailsScreen> {
                       Row(
                         children: [
                           Text(
-                            'Description',
+                            S.of(context).description,
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           IconButton(
@@ -111,8 +158,13 @@ class _ActivityDetailsScreenState extends State<ActivityDetailsScreen> {
                               await customBottomSheet(
                                 context: context,
                                 controller: textController,
-                                onPressed: (context) {
+                                onPressed: (context) async{
                                   // Update the description here
+                                  await Activities.updateDescription(
+                                    city: widget.cityName!,
+                                    oldDescription: activity.description!,
+                                    newDescription: textController.text,
+                                  );
                                   ScaffoldMessenger.of(
                                     context,
                                   ).showSnackBar(

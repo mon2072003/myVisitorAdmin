@@ -60,7 +60,11 @@ class SearchContactsDelegate extends SearchDelegate<String> {
                   ),
             ),
           ),
-          title: Text(results[index].name!),
+          title: Text(results[index].name!,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.deepOrange,
+              )),
           subtitle: Text(results[index].email!),
           trailing: IconButton(
             onPressed: () {

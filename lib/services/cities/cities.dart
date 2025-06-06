@@ -135,4 +135,18 @@ class Cities {
       debugPrint('Error adding city: $error');
     });
   }
+
+   Future<void> deleteCity({required String name}) async {
+    final firestore = FirebaseFirestore.instance;
+    final placesCollection = firestore.collection('egy_data');
+    // Find the document with the matching 'name' field and delete it
+    final querySnapshot = await placesCollection.where('name', isEqualTo: name).get();
+    for (var doc in querySnapshot.docs) {
+      await doc.reference.delete().then((_) {
+      debugPrint('City deleted successfully');
+      }).catchError((error) {
+      debugPrint('Error deleting city: $error');
+      });
+    }
+  }
 }

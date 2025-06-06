@@ -37,8 +37,10 @@ class _CityDetailsScreenState extends State<CityDetailsScreen> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder:
-                      (context) =>
-                          ActivitiesScreen(activitiesModel: activities),
+                      (context) => ActivitiesScreen(
+                        activitiesModel: activities,
+                        cityName: widget.city!.name,
+                      ),
                 ),
               );
             },
@@ -84,6 +86,7 @@ class _CityDetailsScreenState extends State<CityDetailsScreen> {
                             color: Colors.deepOrange,
                           ),
                           onPressed: () async {
+                            textController.text = widget.city!.name ?? "";
                             await customBottomSheet(
                               context: context,
                               controller: textController,
@@ -143,12 +146,15 @@ class _CityDetailsScreenState extends State<CityDetailsScreen> {
                           ),
                           Expanded(
                             child: Text(
-                              widget.city!.description ?? "No Description available.",
+                              widget.city!.description ??
+                                  "No Description available.",
                               style: const TextStyle(fontSize: 18),
                             ),
                           ),
                           IconButton(
                             onPressed: () async {
+                              textController.text =
+                                  widget.city!.description ?? "";
                               await customBottomSheet(
                                 context: context,
                                 controller: textController,
@@ -199,6 +205,7 @@ class _CityDetailsScreenState extends State<CityDetailsScreen> {
                         Expanded(child: SizedBox()),
                         IconButton(
                           onPressed: () async {
+                            textController.clear();
                             await customBottomSheet(
                               context: context,
                               controller: textController,

@@ -15,6 +15,12 @@ class _AddNewCityScreenState extends State<AddNewCityScreen> {
   final TextEditingController cityNameController = TextEditingController();
   final TextEditingController cityDescriptionController =
       TextEditingController();
+  @override
+  void dispose() {
+    cityNameController.dispose();
+    cityDescriptionController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

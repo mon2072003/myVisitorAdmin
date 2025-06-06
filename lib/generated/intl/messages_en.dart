@@ -30,14 +30,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Account info updated successfully"),
         "activities": MessageLookupByLibrary.simpleMessage("Activities"),
+        "activity_added_successfully":
+            MessageLookupByLibrary.simpleMessage("Activity added successfully"),
+        "activity_deleted_successfully": MessageLookupByLibrary.simpleMessage(
+            "Activity deleted successfully"),
+        "activity_details":
+            MessageLookupByLibrary.simpleMessage("Activity Details"),
         "add_a_new_city":
             MessageLookupByLibrary.simpleMessage("Add a new city"),
+        "add_image_url": MessageLookupByLibrary.simpleMessage("Add Image URL"),
+        "add_new_activity":
+            MessageLookupByLibrary.simpleMessage("Add New Activity"),
         "admin": MessageLookupByLibrary.simpleMessage("Admin"),
+        "are_you_sure_you_want_to_delete_this_activity":
+            MessageLookupByLibrary.simpleMessage(
+                "Are you sure you want to delete this activity?"),
         "are_you_sure_you_want_to_leave_the_chat":
             MessageLookupByLibrary.simpleMessage(
                 "Are you sure you want to leave the chat?"),
         "booking_reservations":
             MessageLookupByLibrary.simpleMessage("Booking Reservations"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "change_account_info":
             MessageLookupByLibrary.simpleMessage("Change Account Info"),
         "change_password":
@@ -54,6 +67,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please complete all fields"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+        "delete_activity":
+            MessageLookupByLibrary.simpleMessage("Delete Activity"),
+        "delete_city": MessageLookupByLibrary.simpleMessage("Delete City"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "enter_activity_description":
+            MessageLookupByLibrary.simpleMessage("Enter activity description"),
+        "enter_activity_name":
+            MessageLookupByLibrary.simpleMessage("Enter activity name"),
         "enter_city_description":
             MessageLookupByLibrary.simpleMessage("Enter city description"),
         "enter_city_name":
@@ -68,6 +90,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "enter_your_phone_number":
             MessageLookupByLibrary.simpleMessage("Enter your phone number"),
+        "field_required":
+            MessageLookupByLibrary.simpleMessage("This field is required"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "guests": MessageLookupByLibrary.simpleMessage("Guests"),
@@ -77,17 +101,28 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hotel Reservation Info"),
         "image_not_available":
             MessageLookupByLibrary.simpleMessage("Image not available"),
+        "image_url": MessageLookupByLibrary.simpleMessage("Image URL"),
+        "invalid_latitude":
+            MessageLookupByLibrary.simpleMessage("Invalid latitude"),
+        "invalid_longitude":
+            MessageLookupByLibrary.simpleMessage("Invalid longitude"),
+        "latitude": MessageLookupByLibrary.simpleMessage("Latitude"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "login_failed": MessageLookupByLibrary.simpleMessage("Login failed"),
         "login_successful":
             MessageLookupByLibrary.simpleMessage("Login successful"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "longitude": MessageLookupByLibrary.simpleMessage("Longitude"),
         "no_activities_available":
+            MessageLookupByLibrary.simpleMessage("No activities found"),
+        "no_activities_found":
             MessageLookupByLibrary.simpleMessage("No activities found"),
         "no_contacts_found":
             MessageLookupByLibrary.simpleMessage("No contacts found"),
         "no_description_available":
             MessageLookupByLibrary.simpleMessage("No description available"),
+        "no_title_available":
+            MessageLookupByLibrary.simpleMessage("No title available"),
         "password_changed_successfully": MessageLookupByLibrary.simpleMessage(
             "Password changed successfully"),
         "password_must_be_at_least_6_characters":
@@ -115,6 +150,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "please_enter_a_valid_phone_number":
             MessageLookupByLibrary.simpleMessage(
                 "Please enter a valid phone number"),
+        "please_enter_activity_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Please enter activity description"),
+        "please_enter_activity_name":
+            MessageLookupByLibrary.simpleMessage("Please enter activity name"),
         "please_enter_city_description": MessageLookupByLibrary.simpleMessage(
             "Please enter city description"),
         "please_enter_city_name":
@@ -145,6 +185,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "support_chats": MessageLookupByLibrary.simpleMessage("Support Chats"),
         "support_team": MessageLookupByLibrary.simpleMessage("Support Team"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
+        "title_updated_successfully":
+            MessageLookupByLibrary.simpleMessage("Title updated successfully"),
         "total_amount": MessageLookupByLibrary.simpleMessage("Total Amount"),
         "total_payment": MessageLookupByLibrary.simpleMessage("Total Payment"),
         "tourist_place_added_successfully":

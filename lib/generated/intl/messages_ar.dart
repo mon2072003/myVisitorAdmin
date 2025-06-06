@@ -30,13 +30,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "تم تحديث معلومات الحساب بنجاح"),
         "activities": MessageLookupByLibrary.simpleMessage("الأنشطة"),
+        "activity_added_successfully":
+            MessageLookupByLibrary.simpleMessage("تمت إضافة النشاط بنجاح"),
+        "activity_deleted_successfully":
+            MessageLookupByLibrary.simpleMessage("تم حذف النشاط بنجاح"),
+        "activity_details":
+            MessageLookupByLibrary.simpleMessage("تفاصيل النشاط"),
         "add_a_new_city":
             MessageLookupByLibrary.simpleMessage("إضافة مدينة جديدة"),
+        "add_image_url":
+            MessageLookupByLibrary.simpleMessage("إضافة رابط الصورة"),
+        "add_new_activity":
+            MessageLookupByLibrary.simpleMessage("إضافة نشاط جديد"),
         "admin": MessageLookupByLibrary.simpleMessage("المسؤول"),
+        "are_you_sure_you_want_to_delete_this_activity":
+            MessageLookupByLibrary.simpleMessage(
+                "هل أنت متأكد أنك تريد حذف هذا النشاط؟"),
         "are_you_sure_you_want_to_leave_the_chat":
             MessageLookupByLibrary.simpleMessage(
                 "هل أنت متأكد أنك تريد مغادرة الدردشة؟"),
         "booking_reservations": MessageLookupByLibrary.simpleMessage("حجوزات"),
+        "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "change_account_info":
             MessageLookupByLibrary.simpleMessage("تغيير معلومات الحساب"),
         "change_password":
@@ -53,6 +67,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("يرجى إكمال الحقول"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "delete": MessageLookupByLibrary.simpleMessage("حذف"),
+        "delete_activity": MessageLookupByLibrary.simpleMessage("حذف النشاط"),
+        "delete_city": MessageLookupByLibrary.simpleMessage("حذف المدينة"),
+        "description": MessageLookupByLibrary.simpleMessage("الوصف"),
+        "enter_activity_description":
+            MessageLookupByLibrary.simpleMessage("أدخل وصف النشاط"),
+        "enter_activity_name":
+            MessageLookupByLibrary.simpleMessage("أدخل اسم النشاط"),
         "enter_city_description":
             MessageLookupByLibrary.simpleMessage("أدخل وصف المدينة"),
         "enter_city_name":
@@ -66,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور الخاصة بك"),
         "enter_your_phone_number":
             MessageLookupByLibrary.simpleMessage("أدخل رقم هاتفك"),
+        "field_required":
+            MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "guests": MessageLookupByLibrary.simpleMessage("الضيوف"),
@@ -75,18 +99,29 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("معلومات حجز الفندق"),
         "image_not_available":
             MessageLookupByLibrary.simpleMessage("الصورة غير متاحة"),
+        "image_url": MessageLookupByLibrary.simpleMessage("رابط الصورة"),
+        "invalid_latitude":
+            MessageLookupByLibrary.simpleMessage("خط العرض غير صالح"),
+        "invalid_longitude":
+            MessageLookupByLibrary.simpleMessage("خط الطول غير صالح"),
+        "latitude": MessageLookupByLibrary.simpleMessage("خط العرض"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "login_failed":
             MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
         "login_successful":
             MessageLookupByLibrary.simpleMessage("تم تسجيل الدخول بنجاح"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "longitude": MessageLookupByLibrary.simpleMessage("خط الطول"),
         "no_activities_available":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على أنشطة"),
+        "no_activities_found":
             MessageLookupByLibrary.simpleMessage("لم يتم العثور على أنشطة"),
         "no_contacts_found": MessageLookupByLibrary.simpleMessage(
             "لم يتم العثور على جهات اتصال"),
         "no_description_available":
             MessageLookupByLibrary.simpleMessage("لا توجد وصف متاح"),
+        "no_title_available":
+            MessageLookupByLibrary.simpleMessage("لا يوجد عنوان متاح"),
         "password_changed_successfully":
             MessageLookupByLibrary.simpleMessage("تم تغيير كلمة المرور بنجاح"),
         "password_must_be_at_least_6_characters":
@@ -110,6 +145,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "يرجى إدخال بريد إلكتروني صالح"),
         "please_enter_a_valid_phone_number":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال رقم هاتف صالح"),
+        "please_enter_activity_description":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال وصف النشاط"),
+        "please_enter_activity_name":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال اسم النشاط"),
         "please_enter_city_description":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال وصف المدينة"),
         "please_enter_city_name":
@@ -140,6 +179,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "support_chats": MessageLookupByLibrary.simpleMessage("دردشات الدعم"),
         "support_team": MessageLookupByLibrary.simpleMessage("فريق الدعم"),
         "title": MessageLookupByLibrary.simpleMessage("العنوان"),
+        "title_updated_successfully":
+            MessageLookupByLibrary.simpleMessage("تم تحديث العنوان بنجاح"),
         "total_amount": MessageLookupByLibrary.simpleMessage("المبلغ الإجمالي"),
         "total_payment": MessageLookupByLibrary.simpleMessage("إجمالي الدفع"),
         "tourist_place_added_successfully":

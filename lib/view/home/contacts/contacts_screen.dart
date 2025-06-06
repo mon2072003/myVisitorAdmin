@@ -43,7 +43,12 @@ class ContactsScreen extends StatelessWidget {
                             ),
                       ),
                     ),
-                    title: Text(state.contacts[index].name!),
+                    title: Text(state.contacts[index].name!,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.deepOrange,
+                        )),
                     subtitle: Text(state.contacts[index].email!),
                     trailing: IconButton(
                       icon: Icon(Icons.arrow_forward_ios),

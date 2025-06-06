@@ -92,7 +92,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   '/SendNotifactionsSendView': (context) => SendNotifactionsSendView(),
   '/change-password': (context) => ChangePasswordScreen(),
   '/about-us': (context) => AboutUsScreen(),
-  '/add-new-city' : (context)=> AddNewCityScreen()
+  '/add-new-city' : (context)=> AddNewCityScreen(),
 };
 
 Future<void> setupHive() async {
