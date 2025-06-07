@@ -1119,6 +1119,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Suggest AI Response`
+  String get suggest_ai_response {
+    return Intl.message(
+      'Suggest AI Response',
+      name: 'suggest_ai_response',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Translate Message`
+  String get translate_message {
+    return Intl.message(
+      'Translate Message',
+      name: 'translate_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy`
+  String get copy {
+    return Intl.message(
+      'Copy',
+      name: 'copy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copied to clipboard`
+  String get copied_to_clipboard {
+    return Intl.message(
+      'Copied to clipboard',
+      name: 'copied_to_clipboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AI response unavailable`
+  String get ai_resonse_unavailable {
+    return Intl.message(
+      'AI response unavailable',
+      name: 'ai_resonse_unavailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No response available`
+  String get no_response_available {
+    return Intl.message(
+      'No response available',
+      name: 'no_response_available',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

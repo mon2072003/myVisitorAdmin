@@ -1,6 +1,7 @@
 import 'package:firebase_ai/firebase_ai.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:translator/translator.dart';
 
 Future<void> showCustomChatModalSheet({
@@ -22,10 +23,10 @@ Future<void> showCustomChatModalSheet({
             ListTile(
               leading: const Icon(Icons.smart_toy,
                   color: Colors.deepOrange),
-              title: const Text('suggest AI Response'),
+              title: Text(S.of(context).suggest_ai_response),
               onTap: () async {
                 Navigator.pop(context);
-                String aiResponse = 'AI response unavailable';
+                String aiResponse = S.of(context).ai_resonse_unavailable;
                 try {
                   final ai = FirebaseAI.googleAI().generativeModel(
                   model: 'gemini-2.0-flash',
@@ -33,7 +34,7 @@ Future<void> showCustomChatModalSheet({
                   final result = await ai.generateContent([
                   Content.text(userInput),
                   ]);
-                  aiResponse = result.text ?? 'No response';
+                  aiResponse = result.text ?? S.of(context).no_response_available;
                   debugPrint('AI Response: $aiResponse');
                   showModalBottomSheet(
                   context: context1,
@@ -50,12 +51,12 @@ Future<void> showCustomChatModalSheet({
                         const SizedBox(height: 16),
                         ElevatedButton.icon(
                           icon: const Icon(Icons.copy,color: Colors.deepOrange,),
-                          label: const Text('Copy',style: TextStyle(color: Colors.deepOrange),),
+                          label: Text(S.of(context).copy,style: TextStyle(color: Colors.deepOrange),),
                           onPressed: () {
                           Clipboard.setData(ClipboardData(text: aiResponse));
                           Navigator.pop(context);
                           ScaffoldMessenger.of(context1).showSnackBar(
-                            const SnackBar(content: Text('Copied to clipboard')),
+                             SnackBar(content: Text(S.of(context).copied_to_clipboard)),
                           );
                           },
                         ),
@@ -72,7 +73,7 @@ Future<void> showCustomChatModalSheet({
             ),
             ListTile(
               leading: const Icon(Icons.translate, color: Colors.deepOrange),
-              title: const Text('Translate Message'),
+              title: Text(S.of(context).translate_message),
               onTap: () async {
                 Navigator.pop(context);
                 final translator = GoogleTranslator();
@@ -96,12 +97,12 @@ Future<void> showCustomChatModalSheet({
                             const SizedBox(height: 16),
                             ElevatedButton.icon(
                           icon: const Icon(Icons.copy,color: Colors.deepOrange,),
-                          label: const Text('Copy',style: TextStyle(color: Colors.deepOrange),),
+                          label: Text(S.of(context).copy,style: TextStyle(color: Colors.deepOrange),),
                               onPressed: () {
                                 Clipboard.setData(ClipboardData(text: translated));
                                 Navigator.pop(context);
                                 ScaffoldMessenger.of(context1).showSnackBar(
-                                  const SnackBar(content: Text('Copied to clipboard')),
+                                   SnackBar(content: Text(S.of(context).copied_to_clipboard)),
                                 );
                               },
                             ),

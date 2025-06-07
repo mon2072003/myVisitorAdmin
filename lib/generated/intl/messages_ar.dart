@@ -43,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_new_activity":
             MessageLookupByLibrary.simpleMessage("إضافة نشاط جديد"),
         "admin": MessageLookupByLibrary.simpleMessage("المسؤول"),
+        "ai_resonse_unavailable":
+            MessageLookupByLibrary.simpleMessage("استجابة AI غير متاحة"),
         "are_you_sure_you_want_to_delete_this_activity":
             MessageLookupByLibrary.simpleMessage(
                 "هل أنت متأكد أنك تريد حذف هذا النشاط؟"),
@@ -67,6 +69,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("يرجى إكمال الحقول"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "copied_to_clipboard":
+            MessageLookupByLibrary.simpleMessage("تم نسخه إلى الحافظة"),
+        "copy": MessageLookupByLibrary.simpleMessage("نسخ"),
         "delete": MessageLookupByLibrary.simpleMessage("حذف"),
         "delete_activity": MessageLookupByLibrary.simpleMessage("حذف النشاط"),
         "delete_city": MessageLookupByLibrary.simpleMessage("حذف المدينة"),
@@ -120,6 +125,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "لم يتم العثور على جهات اتصال"),
         "no_description_available":
             MessageLookupByLibrary.simpleMessage("لا توجد وصف متاح"),
+        "no_response_available":
+            MessageLookupByLibrary.simpleMessage("لا توجد استجابة متاحة"),
         "no_title_available":
             MessageLookupByLibrary.simpleMessage("لا يوجد عنوان متاح"),
         "password_changed_successfully":
@@ -176,6 +183,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("حدث خطأ ما"),
         "subtitle": MessageLookupByLibrary.simpleMessage("العنوان الفرعي"),
+        "suggest_ai_response":
+            MessageLookupByLibrary.simpleMessage("اقتراح رد AI"),
         "support_chats": MessageLookupByLibrary.simpleMessage("دردشات الدعم"),
         "support_team": MessageLookupByLibrary.simpleMessage("فريق الدعم"),
         "title": MessageLookupByLibrary.simpleMessage("العنوان"),
@@ -190,6 +199,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم حذف المعلم السياحي بنجاح"),
         "tourist_places":
             MessageLookupByLibrary.simpleMessage("المعالم السياحية"),
+        "translate_message":
+            MessageLookupByLibrary.simpleMessage("ترجمة الرسالة"),
         "unKnown_activity":
             MessageLookupByLibrary.simpleMessage("نشاط غير معروف"),
         "update_info": MessageLookupByLibrary.simpleMessage("تحديث المعلومات"),

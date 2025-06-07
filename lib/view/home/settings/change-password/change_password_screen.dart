@@ -16,17 +16,16 @@ class ChangePasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(S.of(context).change_password), centerTitle: true),
+      appBar: AppBar(
+        title: Text(S.of(context).change_password),
+        centerTitle: true,
+      ),
       body: Form(
         key: formKey,
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           children: [
-            Lottie.asset(
-              'images/society.json',
-              height: 200,
-              width: 200,
-            ),
+            Lottie.asset('images/society.json', height: 200, width: 200),
             const SizedBox(height: 10),
             CustomTextField(
               hintText: S.of(context).enter_your_new_password,
@@ -66,16 +65,31 @@ class ChangePasswordScreen extends StatelessWidget {
               ),
               onPressed: () {
                 if (formKey.currentState!.validate()) {
-                  authViewModel.changePassword(newPasswordController.text.trim()).then((_) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                       SnackBar(content: Text(S.of(context).password_changed_successfully)),
-                    );
-                    Navigator.pop(context); // Go back to the previous screen
-                  }).catchError((error) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Error: $error')),
-                    );
-                  });
+                  authViewModel
+                      .changePassword(newPasswordController.text.trim())
+                      .then((_) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              S.of(context).password_changed_successfully,
+                            ),
+                          ),
+                        );
+                        Navigator.pop(
+                          context,
+                        ); // Go back to the previous screen
+                      })
+                      .catchError((error) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              "this method requires recent login session",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            backgroundColor: Colors.red,
+                          ),
+                        );
+                      });
                 }
               },
               child: Text(

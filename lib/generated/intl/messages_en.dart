@@ -42,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_new_activity":
             MessageLookupByLibrary.simpleMessage("Add New Activity"),
         "admin": MessageLookupByLibrary.simpleMessage("Admin"),
+        "ai_resonse_unavailable":
+            MessageLookupByLibrary.simpleMessage("AI response unavailable"),
         "are_you_sure_you_want_to_delete_this_activity":
             MessageLookupByLibrary.simpleMessage(
                 "Are you sure you want to delete this activity?"),
@@ -67,6 +69,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please complete all fields"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "copied_to_clipboard":
+            MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
+        "copy": MessageLookupByLibrary.simpleMessage("Copy"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "delete_activity":
             MessageLookupByLibrary.simpleMessage("Delete Activity"),
@@ -121,6 +126,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No contacts found"),
         "no_description_available":
             MessageLookupByLibrary.simpleMessage("No description available"),
+        "no_response_available":
+            MessageLookupByLibrary.simpleMessage("No response available"),
         "no_title_available":
             MessageLookupByLibrary.simpleMessage("No title available"),
         "password_changed_successfully": MessageLookupByLibrary.simpleMessage(
@@ -182,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "subtitle": MessageLookupByLibrary.simpleMessage("Subtitle"),
+        "suggest_ai_response":
+            MessageLookupByLibrary.simpleMessage("Suggest AI Response"),
         "support_chats": MessageLookupByLibrary.simpleMessage("Support Chats"),
         "support_team": MessageLookupByLibrary.simpleMessage("Support Team"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
@@ -197,6 +206,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Tourist place deleted successfully"),
         "tourist_places":
             MessageLookupByLibrary.simpleMessage("Tourist Places"),
+        "translate_message":
+            MessageLookupByLibrary.simpleMessage("Translate Message"),
         "unKnown_activity":
             MessageLookupByLibrary.simpleMessage("Unknown activity"),
         "update_info": MessageLookupByLibrary.simpleMessage("Update Info"),

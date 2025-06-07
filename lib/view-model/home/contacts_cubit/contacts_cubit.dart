@@ -11,6 +11,8 @@ class ContactsCubit extends Cubit<ContactsState> {
   void getContacts() async {
     // Simulate loading contacts from a database or API
     contacts = await contactsAPI.getContacts();
-    emit(ContactsLoaded(contacts: contacts));
+    if (!isClosed) {
+      emit(ContactsLoaded(contacts: contacts));
+    }
   }
 }

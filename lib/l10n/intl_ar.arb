@@ -106,7 +106,13 @@
     "are_you_sure_you_want_to_delete_this_activity": "هل أنت متأكد أنك تريد حذف هذا النشاط؟",
     "cancel": "إلغاء",
     "delete": "حذف",
-    "activity_deleted_successfully": "تم حذف النشاط بنجاح"
+    "activity_deleted_successfully": "تم حذف النشاط بنجاح",
+    "suggest_ai_response": "اقتراح رد AI",
+    "translate_message": "ترجمة الرسالة",
+    "copy": "نسخ",
+    "copied_to_clipboard": "تم نسخه إلى الحافظة",
+    "ai_resonse_unavailable": "استجابة AI غير متاحة",
+    "no_response_available": "لا توجد استجابة متاحة"
 
 
 }

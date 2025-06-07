@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_visitor_admin/generated/l10n.dart';
 import 'package:my_visitor_admin/model/messages/message_model.dart';
 import 'package:my_visitor_admin/view-model/home/chat_cubit/cubit_cubit/chat_cubit.dart';
 import 'package:my_visitor_admin/widgets/chat_widgets/confirm_dialog.dart';
@@ -146,7 +147,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
                 style: TextStyle(color: Colors.black),
                 onSubmitted: (_) => sendMessage(),
                 decoration: InputDecoration(
-                  hintText: " Write message...",
+                  hintText: S.of(context).write_message,
                   hintStyle: const TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),

@@ -106,5 +106,11 @@
     "are_you_sure_you_want_to_delete_this_activity": "Are you sure you want to delete this activity?",
     "cancel": "Cancel",
     "delete": "Delete",
-    "activity_deleted_successfully": "Activity deleted successfully"
+    "activity_deleted_successfully": "Activity deleted successfully",
+    "suggest_ai_response": "Suggest AI Response",
+    "translate_message": "Translate Message",
+    "copy": "Copy",
+    "copied_to_clipboard": "Copied to clipboard",
+    "ai_resonse_unavailable": "AI response unavailable",
+    "no_response_available": "No response available"
 }
